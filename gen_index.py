@@ -59,4 +59,4 @@ def insert_into_index(content):
 if __name__ == "__main__":
     structure = generate_structure()
     insert_into_index(structure)
-    print("Update index successfully")
+    print("Update index successfully\n")
