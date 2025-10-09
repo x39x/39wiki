@@ -157,11 +157,11 @@ fi
 效果展示
 
 - macOS
-  ![mac_light](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hbavwj30us04ggn6.jpg)
-  ![mac_dark](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0gzk0mj30us04gtak.jpg)
+  ![mac_light](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hbavwj30us04ggn6.jpg)
+  ![mac_dark](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0gzk0mj30us04gtak.jpg)
 - 微信
-  ![wechat_light](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hx247j30vq04gjsy.jpg)
-  ![wechat_dark](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hkw66j30vq04gwg6.jpg)
+  ![wechat_light](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hx247j30vq04gjsy.jpg)
+  ![wechat_dark](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66f0hkw66j30vq04gwg6.jpg)
 
 配置
 

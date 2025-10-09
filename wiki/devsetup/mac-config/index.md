@@ -72,7 +72,7 @@ keka the‐unarchiver
 iina xld fliqlo
 ```
 
-![sc](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66enabbf9j32c01iuncg.jpg)
+![sc](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66enabbf9j32c01iuncg.jpg)
 
 - **Fliqlo：** 简约风 Screen Saver
 - **IINA：** 一款开源的视频播放器
@@ -86,11 +86,11 @@ iina xld fliqlo
 
 ### Bob：翻译软件，支持 OCR 翻译
 
-![bob](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66ekj20xdj30rc0ky0vs.jpg)
+![bob](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66ekj20xdj30rc0ky0vs.jpg)
 
 ### Craft Doc：笔记
 
-![craft](https://tvax4.sinaimg.cn/large/008IpWfqgy1i66elu8idbj31r41cw4qp.jpg)
+![craft](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66elu8idbj31r41cw4qp.jpg)
 
 # 系统设置
 
