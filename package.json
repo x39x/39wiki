@@ -1,0 +1,11 @@
+{
+    "devDependencies": {
+        "@types/node": "^24.7.0",
+        "vitepress": "2.0.0-alpha.12"
+    },
+    "scripts": {
+        "wiki:dev": "vitepress dev wiki",
+        "wiki:build": "vitepress build wiki",
+        "wiki:preview": "vitepress preview wiki"
+    }
+}

@@ -1,0 +1,13 @@
+/coverage
+*.log
+*.tgz
+.DS_Store
+.temp
+.vite_opt_cache
+.vscode
+dist
+cache
+temp
+examples-temp
+node_modules
+pnpm-global
