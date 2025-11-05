@@ -5,7 +5,7 @@ Node.js 有两个主要的发布版本：
 1. Current (当前版本): 最新的功能版本，可能包含新特性和改进，但不保证长期稳定性。
 2. LTS (长期支持版本): 经过充分测试并得到长期支持，适合生产环境使用，通常每个 LTS 版本会在发布后的 30 个月内收到更新和支持。
 
-brew 默认是 Current ，推荐使用 LTS ，一般是 Current 版本号减二
+brew 默认是 Current ，推荐使用 LTS ，一般是 Current 版本号减二或者减二（LTS都是偶数版本）
 
 ```sh
 brew install node@LTS
@@ -15,6 +15,8 @@ corepack enable
 ```
 
 从 Node.js v16.9.0 开始，Corepack 已经预装在 Node.js 发行版中。启用后会确保 Corepack 能够拦截对应的包管理器命令（npm, Yarn, pnpm），并且如果必要，会自动下载指定版本的这些包管理器。
+
+> Corepack 在 Node@25 被移除，需要手动安装
 
 ## pnpm 支持全局 Node.js 版本管理
 
