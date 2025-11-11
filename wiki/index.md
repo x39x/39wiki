@@ -4,17 +4,17 @@ layout: home
 ---
 
 
-# devsetup
+# dev-setup
 
-- [Golang 常用命令与基本配置](/devsetup/gocmd/)
+- [Golang 常用命令与基本配置](/dev-setup/gocmd/)
 
-- [MacOS 新机开发环境配置](/devsetup/mac-config/)
+- [MacOS 新机开发环境配置](/dev-setup/mac-config/)
 
-- [Nodejs 环境配置 | Node 版本切换](/devsetup/node_env/)
+- [Nodejs 环境配置 | Node 版本切换](/dev-setup/node_env/)
 
-- [Python 虚拟环境 | uv](/devsetup/python-venv/)
+- [Python 虚拟环境 | uv](/dev-setup/python-venv/)
 
-- [Rust 安装与环境变量配置](/devsetup/rustenv/)
+- [Rust 安装与环境变量配置](/dev-setup/rustenv/)
 
 # linux
 
@@ -27,6 +27,8 @@ layout: home
 - [Linux 安装](/linux/install/)
 
 - [Linux 网络配置](/linux/net/)
+
+- [Linux 拯救](/linux/recover/)
 
 - [Linux Systemd 使用](/linux/systemd/)
 

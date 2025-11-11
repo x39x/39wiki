@@ -97,7 +97,8 @@ git clone --depth=1 https://github.com/iDvel/rime-ice.git Rime
 
 以补丁的形式只修改我们需要的部分，以`.custom.yaml`结尾的文件已经被添加进 rime-ice 的 gitignore 中，不会影响 rime-ice 仓库本身，
 
-补丁文件的格式如下，以`patch:`作为开头，加一层缩进，将需要修改的部分从对应源文件里复制过来参考源文件注释修改即可，
+补丁文件的格式如下，以`patch:`作为开头，加一层缩进，将需要修改的部分从对应源文件里复制过来修改即可，`*.custom.yaml`
+里的修改会覆盖掉 `*.yaml`
 
 ```yaml
 # default.custom.yaml  参考default.yaml
@@ -283,6 +284,6 @@ preset_color_schemes:
 
 ## 参考
 
-[我的配置](https://github.com/x39x/config/tree/master/Rime)
+[我的配置](https://github.com/x39x/dotfiles/tree/main/IM/Rime)
 
 更多详细配置请参考[rime-ice](https://dvel.me/posts/rime-ice/)以及[ Squirrel ](https://rime.im/docs/)文档

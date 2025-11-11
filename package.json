@@ -6,6 +6,7 @@
     },
     "scripts": {
         "push": "tsx push.ts",
+        "index": "tsx gen_index.ts",
         "wiki:dev": "vitepress dev wiki",
         "wiki:build": "vitepress build wiki",
         "wiki:preview": "vitepress preview wiki"
