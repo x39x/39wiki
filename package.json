@@ -1,14 +1,15 @@
 {
+    "type": "module",
     "devDependencies": {
         "@types/node": "^24.7.0",
         "tsx": "^4.20.6",
         "vitepress": "2.0.0-alpha.12"
     },
     "scripts": {
-        "push": "tsx push.ts",
         "index": "tsx gen_index.ts",
-        "wiki:dev": "vitepress dev wiki",
-        "wiki:build": "vitepress build wiki",
-        "wiki:preview": "vitepress preview wiki"
+        "push": "tsx gen_index && tsx push.ts",
+        "dev": "tsx gen_index && vitepress dev",
+        "build": "vitepress build",
+        "preview": "vitepress preview"
     }
 }
