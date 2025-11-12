@@ -7,7 +7,7 @@
     },
     "scripts": {
         "index": "tsx gen_index.ts",
-        "push": "tsx gen_index && tsx push.ts",
+        "push": "pnpm run index && tsx push.ts",
         "dev": "tsx gen_index && vitepress dev",
         "build": "vitepress build",
         "preview": "vitepress preview"
