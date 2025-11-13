@@ -1,11 +1,11 @@
-# MacOS 新机开发环境配置
+## MacOS 新机开发环境配置
 
 最近重装系统，记录一下新系统配置流程
 
 大部分软件都需要从需要通过Homebrew安装，鉴于糟糕的网络情况:(
 需要在 iCloud 备份一个 Clash 安装包或通过外区 App Store 安装 Shadowrocket，
 
-## Turn on iCloud Drive Sync
+### Turn on iCloud Drive Sync
 
  `->` System Settings `->` Apple Account `->` iCloud `->` Drive.
 turned on `Sync this Mac` and `Desktop & Documents Folders`
@@ -20,7 +20,7 @@ turned on `Sync this Mac` and `Desktop & Documents Folders`
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## 命令行配置
+### 命令行配置
 
 同步配置文件
 
@@ -82,7 +82,7 @@ iina xld fliqlo
 
 视频下载（bilibili&YouTube），付费:(
 
-# App Store
+## App Store
 
 ### Bob：翻译软件，支持 OCR 翻译
 
@@ -92,7 +92,7 @@ iina xld fliqlo
 
 ![craft](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66elu8idbj31r41cw4qp.jpg)
 
-# 系统设置
+## 系统设置
 
 ### Finder 设置
 
@@ -147,7 +147,7 @@ Advanced `->` Show features for web developers
 
 打开 find my(开启位置服务)、登陆 google账号、验证常用邮箱
 
-# 其他
+## 其他
 
 Homebrew 安装后需配置环境变量
 
@@ -187,7 +187,7 @@ brew bundle dump --describe --force --file="~/.dotfile/Brewfile"
 brew bundle --file="~/.dotfile/Brewfile"
 ```
 
-# Tips
+## Tips
 
 ### Mac 签名 app
 
@@ -206,3 +206,9 @@ sudo spctl --master-enable  # 开启
 ### Emoj Shortcuts
 
 Control + Command + Space
+
+### 文件系统
+
+https://docs.spryker.com/docs/dg/dev/integrate-and-configure/switch-to-a-case-sensitive-file-system-on-mac-os#create-the-disk-image
+
+切换大小写敏感
