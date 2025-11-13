@@ -1,4 +1,4 @@
-# git 文件恢复、撤销修改等
+# 文件恢复、撤销修改等
 
 ## 误删文件恢复
 
@@ -71,3 +71,7 @@ git checkout feature
 ## git reflog
 
 git reflog 记录的是对 HEAD 引用的所有变动，而不仅仅是提交。它包括提交、分支切换、重置等操作。reflog 是本地的，并不会被推送到远程仓库，用于恢复误操作、找回丢失的提交等。
+
+## TODO
+
+- 对于已经提交的内容，希望git能够忽略，但同时并不会删除本地文件，需要在terminal 输入以下命令：`git rm -r --cached $file_path`

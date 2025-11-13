@@ -114,7 +114,7 @@ async function generateStructure(): Promise<string> {
 
     for (const category of categoryDirs) {
         const categoryName = category.name;
-        lines.push(`# ${categoryName}\n`);
+        lines.push(`## ${categoryName}\n`);
 
         const categoryPath = join(rootDir, categoryName);
         const subLines = await walkDir(categoryPath, categoryName, 0);
@@ -133,7 +133,7 @@ const indexMD = await fs.readFile(indexPath, "utf-8");
 existingLines = indexMD.split(/\r?\n/);
 
 // 保留前五行 frontmatter
-const keep = existingLines.slice(0, 5);
+const keep = existingLines.slice(0, 10);
 const newContent = [...keep, "", content, ""].join("\n");
 await fs.writeFile(indexPath, newContent, "utf-8");
 

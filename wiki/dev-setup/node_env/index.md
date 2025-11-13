@@ -1,4 +1,4 @@
-# Nodejs 环境配置 | Node 版本切换
+# Nodejs 环境| 版本
 
 Node.js 有两个主要的发布版本：
 
@@ -35,13 +35,13 @@ pnpm env remove --global 14.0.0
 
 ## 项目级指定 Node 版本（非全局切换）
 
-项目目录下创建 `.npmrc` 文件：
+- 项目目录下创建 `.npmrc` 文件：
 
 ```ini
 use-node-version=23.11.0
 ```
 
-或者在 `pnpm-workspace.yaml` 中指定
+- 或者在 `pnpm-workspace.yaml` 中指定
 
 ```yaml
 useNodeVersion: 23.11.0

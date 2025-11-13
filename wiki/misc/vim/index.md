@@ -62,3 +62,8 @@ dap.configurations.python = python
 ```
 
 其中 type 是对应调试器的名称
+
+## vim 配置文件加载规则
+
+nvim plugin 、ftplugin、queries是用来覆盖[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
+的，after/plugin 、after/plugin... 是追加

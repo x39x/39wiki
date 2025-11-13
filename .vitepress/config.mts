@@ -89,7 +89,7 @@ function genSideBarItems(baseDir: string, basePath: string): any[] {
     return items;
 }
 
-export function genSideBar() {
+function genSideBar() {
     const basePath = path.resolve(__dirname, "..", "wiki");
     const excludeDirs = new Set(["public"]);
 
@@ -112,6 +112,12 @@ export default defineConfig({
     title: "39wiki",
     srcDir: "wiki",
     lastUpdated: true,
+    markdown: {
+        image: {
+            lazyLoading: true,
+        },
+        math: true,
+    },
     head: [
         [
             "link",

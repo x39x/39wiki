@@ -1,5 +1,9 @@
 # commit 撤销、丢弃
 
+- git commit
+- git commit -v(verbose) more detail
+- git commit -a : auto add
+
 ## 撤销提交
 
 revert的原理是，在当前提交后面，新增一次提交，抵消掉上一次提交导致的所有变化。它不会改变过去的历史，所以是首选方式，没有任何丢失代码的风险。

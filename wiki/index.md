@@ -1,61 +1,87 @@
 ---
 title: 39wiki
-layout: home
+layout: doc
 ---
 
+<div align="left" dir="auto" >
+    <img src="/miku.svg" width="39%" alt="✨">
+</div>
 
-# dev-setup
 
+
+## cmd-line-tools
+
+- [tar 用法](/cmd-line-tools/tar/)
+- [常用工具｜Tips](/cmd-line-tools/tips/)
+- [Tmux 配置与常用操作](/cmd-line-tools/tmux/)
+- [zip](/cmd-line-tools/zip/)
+
+## dev-setup
+
+- [Mac 配置 Scheme 环境](/dev-setup/apple_scheme/)
 - [C/C++](/dev-setup/cpp/)
-- [Golang 常用命令与基本配置](/dev-setup/gocmd/)
 - [Java jdk](/dev-setup/java/)
-- [latex VSCode 配置](/dev-setup/latex/)
 - [MacOS 新机开发环境配置](/dev-setup/mac-config/)
-- [Nodejs 环境配置 | Node 版本切换](/dev-setup/node_env/)
-- [Python 虚拟环境 | uv](/dev-setup/python-venv/)
+- [Nodejs 环境| 版本](/dev-setup/node_env/)
+- [Python 虚拟环境](/dev-setup/python-venv/)
 - [Rust 安装与环境变量配置](/dev-setup/rustenv/)
 
-# git
+## fromula
 
-- [git 常用命令](/git/command/)
+- [Latex](/fromula/latex/)
+- [latex VSCode 配置](/fromula/latex-vscode/)
+
+## git
+
+- [常用命令](/git/command/)
 - [commit 撤销、丢弃](/git/commit/)
-- [git 基本配置](/git/config/)
+- [基本配置](/git/config/)
 - [github](/git/github/)
-- [git 文件恢复、撤销修改等](/git/recover/)
+- [gitignore](/git/ignore/)
+- [merge and rebase](/git/merge-rebase/)
+- [文件恢复、撤销修改等](/git/recover/)
+- [remote](/git/remote/)
+- [tags](/git/tags/)
 
-# golang
+## golang
 
 - [基础](/golang/base/)
+- [Golang 常用命令与基本配置](/golang/gocmd/)
 
-# linux
+## linux
 
-- [Linux 常用命令](/linux/command/)
-- [Linux 新系统基本配置](/linux/config/)
-- [Linux CPU 策略](/linux/cpupower/)
-- [linux 输入法](/linux/im/)
-- [Linux 网络配置](/linux/net/)
-- [Linux 拯救](/linux/recover/)
-- [Linux Systemd 使用](/linux/systemd/)
+- [常用命令](/linux/command/)
+- [CPU 策略](/linux/cpupower/)
+- [系统拯救](/linux/recover/)
+- [Systemd 使用](/linux/systemd/)
+- **config**
+    - [新系统基本配置](/linux/config/base/)
+    - [输入法](/linux/config/im/)
+    - [网络配置](/linux/config/net/)
 - **install**
     - [arch 安装](/linux/install/arch/)
-    - [Linux 安装](/linux/install/base/)
+    - [镜像烧录](/linux/install/base/)
 
-# misc
+## misc
 
-- [Apple Silicon Mac 配置 Scheme 环境](/misc/apple_scheme/)
-- [命令行工具](/misc/cmdlinetools/)
+- [macOS ACL 权限管理](/misc/macOS_ACL/)
 - [Makefile 简明教程](/misc/makefile/)
-- [shell 配置，sh 语法](/misc/shell/)
-- [tar 常用命令总结](/misc/tar/)
-- [Tmux 配置与常用操作](/misc/tmux/)
 - [vim 笔记](/misc/vim/)
 - [VSCode 快捷键](/misc/vscode/)
 
-# ssh
+## shell
 
-- [SSH 常见问题解决及其他用法](/ssh/ssh/)
-- [SSH Client | 客户端配置](/ssh/ssh_client/)
-- [SSH 上传文件至服务端](/ssh/ssh_file/)
-- [SSH 密钥登录及相关配置](/ssh/ssh_passkey/)
-- [SSH Server | 服务端配置](/ssh/ssh_server/)
+- [基础命令](/shell/base/)
+- [配置｜配置文件加载](/shell/config/)
+- [笔记｜技巧](/shell/notes/)
+- [语法｜sh/bash](/shell/sh/)
+- [快捷键](/shell/shourtcut/)
+
+## ssh
+
+- [Client | 客户端配置](/ssh/client/)
+- [常见问题解决及其他用法](/ssh/expansion/)
+- [密钥登录及相关配置](/ssh/passkey/)
+- [Server | 服务端配置](/ssh/server/)
+- [上传文件至服务端](/ssh/trans_file/)
 

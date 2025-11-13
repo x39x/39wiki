@@ -1,4 +1,4 @@
-# Python 虚拟环境 | uv
+# Python 虚拟环境
 
 ## Python Version Control: uv
 

@@ -1,6 +1,19 @@
 # arch 安装
 
-# font
+## 硬盘分区
+
+Eg: 8g+128g
+
+| 分区                 | 文件系统 | 大小 | 挂载点      | 说明                                                                       |
+| -------------------- | -------- | ---- | ----------- | -------------------------------------------------------------------------- |
+| **EFI 分区**         | FAT32    | 1G   | `/boot/efi` | 存放 UEFI 引导文件，必须为 FAT32 格式。旧电脑可能会不支持,使用传统引导     |
+| **SWAP 分区**        | swap     | 10GB | `swap`      | 虚拟内存，支持内存溢出或休眠，一般为内存的1～2倍，支持休眠功能需不小于内存 |
+| **根分区 `/`**       | ext4     | 40GB | `/`         | 存放系统文件，支持应用和软件安装。                                         |
+| **用户数据 `/home`** | ext4     | 60GB | `/home`     | 存放用户数据和配置文件，适用于日常使用。                                   |
+
+[Debian分区](https://www.yitu.xyz/2022/04/05/%E6%89%8B%E5%8A%A8%E5%88%86%E5%8C%BAdebian-boot%E3%80%81-swap%E3%80%81root%E3%80%81-home%E3%80%81-tmp%E3%80%81-srv%E3%80%81-var/)
+
+## font
 
 - noto-fonts
 - noto-fonts-cjk
@@ -11,7 +24,7 @@
 
 配置参考：https://catcat.cc/post/2021-03-07
 
-# Volum
+## Volum
 
 - https://wiki.archlinuxcn.org/wiki/WirePlumber
 - https://wiki.archlinuxcn.org/wiki/PipeWire
@@ -24,15 +37,15 @@ pipewire-alsa    # pulse  兼容层
 pipewire-pulse   # ALSA 兼容层
 ```
 
-# 背光调节
+## 背光调节
 
 https://github.com/Hummer12007/brightnessctl
 
-# proxy
+## proxy
 
 https://arch.icekylin.online/guide/rookie/transparent.html
 
-# sway
+## sway
 
 - i3blocks
 - swaybg
@@ -78,7 +91,7 @@ input "1133:16450:Logitech_USB_Receiver" {
 }
 ```
 
-# 剪切板
+## 剪切板
 
 - https://github.com/bugaevc/wl-clipboard
 
@@ -90,13 +103,13 @@ input "1133:16450:Logitech_USB_Receiver" {
 
 配合 wtype
 
-# 改键
+## 改键
 
 - https://github.com/rvaiya/keyd
 - https://github.com/xremap/xremap
 - https://github.com/waycrate/swhkd
 
-# 截图
+## 截图
 
 - https://github.com/emersion/slurp
 - https://git.sr.ht/~emersion/grim/
@@ -121,7 +134,7 @@ swappy -f "~/Desktop/my-gnome-saved-file.png"
 grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
 ```
 
-# 屏幕录制
+## 屏幕录制
 
 - https://github.com/ammen99/wf-recorder
 
@@ -134,7 +147,7 @@ wf-recorder -g "$(slurp)"
 
 - https://wiki.archlinuxcn.org/wiki/%E5%B1%8F%E5%B9%95%E6%8D%95%E8%8E%B7#Wayland
 
-# 按键模拟
+## 按键模拟
 
 - https://github.com/ReimuNotMoe/ydotool
 
@@ -142,7 +155,7 @@ wf-recorder -g "$(slurp)"
 
 - https://github.com/atx/wtype
 
-# 多媒体
+## 多媒体
 
 ### 图片查看
 
@@ -157,7 +170,7 @@ wf-recorder -g "$(slurp)"
 
 - https://github.com/mpv-player/mpv
 
-# 防火墙
+## 防火墙
 
 - https://wiki.archlinux.org/title/Nftables
 
@@ -165,7 +178,7 @@ wf-recorder -g "$(slurp)"
 
 - https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
-# TODO
+## TODO
 
 - https://github.com/elkowar/eww
 
@@ -190,7 +203,7 @@ wf-recorder -g "$(slurp)"
 
 ---
 
-# U盘
+## U盘
 
 ```sh
 lsblk
@@ -208,7 +221,7 @@ cp -r /mnt/usb/Documents ~/
 sudo umount /mnt/usb
 ```
 
-# pack
+## pack
 
 ```sh
 # sys

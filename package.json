@@ -2,6 +2,7 @@
     "type": "module",
     "devDependencies": {
         "@types/node": "^24.10.1",
+        "markdown-it-mathjax3": "^4.3.2",
         "tsx": "^4.20.6",
         "vitepress": "2.0.0-alpha.12"
     },
@@ -11,5 +12,9 @@
         "dev": "tsx gen_index.ts && vitepress dev",
         "build": "vitepress build",
         "preview": "vitepress preview"
+    },
+    "dependencies": {
+        "@vscode/markdown-it-katex": "^1.1.2",
+        "katex": "^0.16.25"
     }
 }

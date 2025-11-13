@@ -1,8 +1,10 @@
-# Linux Systemd 使用
+# Systemd 使用
 
 定时任务
 
 ## 创建一个定时器：
+
+### fdsk
 
 ```bash
 sudo vi /etc/systemd/system/reboot.timer
@@ -107,7 +109,7 @@ systemctl list-timers --all
 systemctl list-units --all | grep <name>
 ```
 
-# 启动模式
+## 启动模式
 
 ### 检查当前的默认启动目标
 
@@ -133,7 +135,7 @@ sudo systemctl set-default multi-user.target
 sudo systemctl start graphical.target
 ```
 
-# Tips
+## Tips
 
 ### 重新加载 unit 文件
 
@@ -165,4 +167,28 @@ systemctl list-units --type=target --all
 
 ```bash
 systemctl list-unit-files --type=target
+```
+
+## Systemd
+
+当 systemd 以用户实例(--user)运行时，加载单元的先后顺序(较前的目录优先级较高)：
+https://www.jinbuguo.com/systemd/systemd.unit.html
+https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html
+
+### 让 systemd 重新加载用户服务配置：
+
+```sh
+systemctl --user daemon-reexec
+systemctl --user daemon-reload
+```
+
+```sh
+loginctl show-user $USER
+#如果输出中 Linger=no，那么你可能需要开启 linger 才能使用用户服务：
+sudo loginctl enable-linger $USER
+systemctl --user status
+mkdir -p ~/.config/systemd/user
+cp battery-monitor.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now battery-monitor.service
 ```

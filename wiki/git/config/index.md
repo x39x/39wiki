@@ -1,4 +1,8 @@
-# git 基本配置
+# 基本配置
+
+## Basic Setting
+
+Git 相关配置保存在 ~/.gitconfig 或 ~/.config/git/config 中用`git config --list`可以查看, `git config <key>`查看单个配置
 
 ```toml
 [user]
@@ -49,10 +53,17 @@ external = difft --syntax-highlight off
 
 ## 网络
 
+将所有 https 都换为 ssh
+
 ```toml
 # use ssh
 [url "git@github.com:"]
 insteadOf = https://github.com/
+```
+
+配置代理
+
+```toml
 # use proxy
 [http "https://github.com"]
 proxy = socks5://127.0.0.1:7890

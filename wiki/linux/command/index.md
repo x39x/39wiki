@@ -1,6 +1,6 @@
-# Linux 常用命令
+# 常用命令
 
-> 查看启动时间
+## 查看启动时间
 
 ```bash
 uptime -s
@@ -8,7 +8,7 @@ who -b
 last reboot
 ```
 
-## 使用 `dmesg`
+### 使用 `dmesg`
 
 `dmesg` 命令显示内核日志，其中包含启动时间的信息：
 
@@ -22,7 +22,7 @@ dmesg | grep -i "command line"
 dmesg | head -1
 ```
 
-## 使用 `journalctl`
+### 使用 `journalctl`
 
 `journalctl` 命令提供了系统日志，可以查看系统启动记录：
 
@@ -39,7 +39,7 @@ journalctl --list-boots
 
 当前引导记录为 `0`，上次启动的时间是 `08:15:12 UTC`。
 
-# 查看当前用户
+## 查看当前用户
 
 统计的是当前登录的所有用户会话，包括本地终端、SSH 会话，以及图形界面的登录。
 
@@ -58,8 +58,6 @@ user1     pts/1        2024-12-24 05:00 (192.168.1.101)
 
 - `tty1` 表示本地终端登录。
 - `pts/0` 和 `pts/1` 是通过 SSH 登录的会话。
-
-# Ip
 
 ## 查看本机 IP
 
@@ -113,3 +111,20 @@ ip -4 addr show dev <网卡名>
 
 1. 打开 "网络设置" 或 "Wi-Fi 设置"。
 2. 在相关连接中查看 "IPv4 地址" 或 "IP 地址"。
+
+## setfacl 权限管理
+
+```sh
+# Modify ACL of a file for user with read and write access:
+setfacl --modify u:username:rw path/to/file_or_directory
+
+# Modify default ACL of a file for all users:
+setfacl --modify --default u::rw path/to/file_or_directory
+
+# Remove ACL of a file for a user:
+setfacl --remove u:username path/to/file_or_directory
+
+# Remove all ACL entries of a file:
+setfacl --remove-all path/to/file_or_directory
+
+```
