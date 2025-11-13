@@ -10,7 +10,7 @@ Error: mit-scheme: Unsatisfied requirements failed this build.
 
 因为 mit-scheme 只能在 Intel 的机型运行，以下推荐两种替代方案
 
-# ChezScheme
+## ChezScheme
 
 ```bash
 # 安装
@@ -22,7 +22,7 @@ chez --script filename.scm
 
 ```
 
-# Racket
+## Racket
 
 racket 是 scheme 的一种方言，它也提供 `r5rs/r6rs` scheme 的支持
 

@@ -19,7 +19,7 @@ sudo systemctl status sshd
 sudo ufw allow ssh
 ```
 
-# 网络连通性测试（Client 上）
+## 网络连通性测试（Client 上）
 
 ```sh
 nc -zv xxx.xxx.xxx.xxx 2222
@@ -27,7 +27,7 @@ nc -zv xxx.xxx.xxx.xxx 2222
 
 如果提示 Connection refused 或 No route to host，就是网络问题或远程端口没开放。
 
-# 防火墙放行 SSH 端口
+## 防火墙放行 SSH 端口
 
 ### UFW
 
@@ -48,7 +48,7 @@ sudo firewall-cmd --add-port=2222/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
-# sshd 配置
+## sshd 配置
 
 建议将端口更改为非默认值以减少被扫描攻击的风险。在配置好密钥连接后禁用密码认证，避免了暴力破解密码的风险
 
@@ -60,7 +60,7 @@ AuthorizedKeysFile .ssh/authorized_keys # 公钥存放文件路径 ~/.ssh
 PasswordAuthentication no               # 禁用密码连接
 ```
 
-# sshd 管理
+## sshd 管理
 
 ```bash
 sudo systemctl start sshd

@@ -57,7 +57,7 @@ sudo systemctl enable cpupower.service
 sudo cpupower frequency-set -g userspace
 ```
 
-# 禁用自动挂起
+## 禁用自动挂起
 
 系统进入了某种节能状态，比如 suspend 或者 CPU 降频，导致远程响应变慢
 
@@ -68,7 +68,7 @@ journalctl | grep suspend
 
 如果看到日志中有 `Suspending system...`，说明系统真的挂起了。这时候即使网络维持，性能也会受到影响。
 
-## 禁用自动挂起（systemd 层面）
+### 禁用自动挂起（systemd 层面）
 
 ```bash
 # find all include "sleep suspend hibernate hybrid"

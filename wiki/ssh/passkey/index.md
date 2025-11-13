@@ -29,14 +29,14 @@ ssh-keygen常见参数：
 
 参考[SSH 上传文件](/ssh/trans_file/)
 
-# 手动指定私钥连接
+## 手动指定私钥连接
 
 ```sh
 # -i 指定私钥所在位置
 ssh -i ~/.sshkey/id_fedora -p 2222 user1@xxx.xxx.xxx.xxx
 ```
 
-# id_rsa 和 id_rsa.pub 文件权限
+## id_rsa 和 id_rsa.pub 文件权限
 
 如果私钥权限过低会出现一下错误
 ![ssh_error](https://image.baidu.com/search/down?url=https://tvax1.sinaimg.cn/large/008IpWfqly1i66e09y1zsj30ry08e77c.jpg)
@@ -69,7 +69,7 @@ getfacl .sshpub/id_rsa.pub # 查看 ACL 权限：
 sudo chmod +a "user1 allow read" .sshkey/id_rsa
 ```
 
-# 使用 `ssh-agent` 管理密钥对
+## 使用 `ssh-agent` 管理密钥对
 
 ### ssh-agent
 

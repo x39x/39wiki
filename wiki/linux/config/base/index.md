@@ -82,9 +82,9 @@ Defaults timestamp_timeout=0
 - 设置为 0：每次使用 sudo 都需要输入密码。
 - 设置为负数（如 -1）：授权后永久有效，直到用户注销或清除缓存。
 
-# 输入法
+## 输入法
 
-## Package
+### Package
 
 ```
 fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime
@@ -96,7 +96,7 @@ fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime
 - fcitx5-rime: RIME 输入法
 - fcitx5-configtool: 图形化配置工具（）
 
-## 配置
+### 配置
 
 参考：
 [fcitx](https://fcitx-im.org/wiki/Setup_Fcitx_5/zh-cn)
@@ -136,7 +136,7 @@ Font="Smartisan Compact CNS 13"
 Theme=spring
 ```
 
-## 雾凇拼音
+### 雾凇拼音
 
 [rime-ice](https://github.com/iDvel/rime-ice)
 
@@ -145,14 +145,14 @@ $HOME/.local/share/fcitx/rime # Linux
 $HOME/Library/Rime # Mac
 ```
 
-# Clash
+## Clash
 
 [wiki](https://wiki.metacubex.one/startup/service/)
 [blog](https://liyp.cc/archives/1696683830494)
 
-# Key
+## Key
 
-## Xmodmap
+### Xmodmap
 
 写一个配置文件.Xmodmap放在 `~`下，使用`xmodmap ~/.Xmodmap` 命令加载
 
@@ -176,11 +176,11 @@ setxkbmap -option ctrl:nocaps
 setxkbmap -option altwin:swap_alt_win
 ```
 
-# XFCE 桌面
+## XFCE 桌面
 
 - [参考](https://community.aidlux.com/postDetail/439)
 
-# Font
+## Font
 
 - [参考](https://copr.fedorainfracloud.org/coprs/aquacash5/nerd-fonts/)
 
@@ -189,13 +189,13 @@ sudo dnf copr enable aquacash5/nerd-fonts
 sudo dnf install fira-code-nerd-fonts
 ```
 
-# Change Password
+## Change Password
 
 ```bash
 sudo passwd username
 ```
 
-# 更改时区
+## 更改时区
 
 ### 查看当前时间和时区设置
 

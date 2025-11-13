@@ -27,7 +27,7 @@ ssh-copy-id -i ~/.ssh/my_key.pub -p 2222 -f user@hostname
     使用 `sftp`。如果远程主机只允许 SFTP 而不允许执行 SSH 命令
 ```
 
-# CAT
+## CAT
 
 简单、简陋、好用
 
@@ -36,7 +36,7 @@ ssh-copy-id -i ~/.ssh/my_key.pub -p 2222 -f user@hostname
 cat ~/.ssh/id_rsa.pub | ssh -p 22 username@ip_address "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 
-# SCP
+## SCP
 
 -P 是指定端口（注意是大写 P）
 
@@ -49,7 +49,7 @@ scp -P 22 -r Demo username@192.168.8.8:/home/user1/
 scp -P 22 -r -i ~/id_rsa Demo username@192.168.8.8:/home/user1/
 ```
 
-# SFTP
+## SFTP
 
 交互式管理远程文件（例如浏览文件、创建目录、删除文件等），或者需要传输大量文件，SFTP 更加灵活和适用。
 
