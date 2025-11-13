@@ -27,7 +27,7 @@ ssh-keygen常见参数：
 
 生成密钥对后上传公钥之服务端
 
-参考[SSH 上传文件](/ssh/ssh_file/)
+参考[SSH 上传文件](/ssh/trans_file/)
 
 # 手动指定私钥连接
 

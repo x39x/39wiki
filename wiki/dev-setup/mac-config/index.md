@@ -47,7 +47,7 @@ node@lts uv golang rust
 - 参考: [Rust 安装与环境变量配置](/dev-setup/rustenv/)
 - 参考: [Mac Node 环境配置](/dev-setup/node_env/)
 - 参考: [Python 虚拟环境配置](/dev-setup/python-venv/)
-- 参考: [Goalng 常用命令与环境配置](/dev-setup/gocmd/)
+- 参考: [Goalng 常用命令与环境配置](/golang/gocmd/)
 
 ## App
 
