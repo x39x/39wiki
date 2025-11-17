@@ -74,6 +74,7 @@ layout: doc
 
 - [基础命令](/shell/base/)
 - [配置｜配置文件加载](/shell/config/)
+- [fish](/shell/fish/)
 - [笔记｜技巧](/shell/notes/)
 - [语法｜sh/bash](/shell/sh/)
 - [快捷键](/shell/shourtcut/)

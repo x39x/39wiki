@@ -1,5 +1,7 @@
 # 语法｜sh/bash
 
+https://github.com/dylanaraps/pure-bash-bible
+
 ## 重定向
 
 ```sh
