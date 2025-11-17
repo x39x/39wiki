@@ -11,6 +11,7 @@ layout: doc
 
 ## cmd-line-tools
 
+- [命令行的艺术](/cmd-line-tools/cmdl-arts/)
 - [tar 用法](/cmd-line-tools/tar/)
 - [常用工具](/cmd-line-tools/tips/)
 - [Tmux 配置与常用操作](/cmd-line-tools/tmux/)
