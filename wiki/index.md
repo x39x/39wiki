@@ -67,6 +67,7 @@ layout: doc
 
 - [macOS ACL 权限管理](/misc/macOS_ACL/)
 - [Makefile 简明教程](/misc/makefile/)
+- [静态网页生成](/misc/staticweb/)
 - [vim 笔记](/misc/vim/)
 - [VSCode 快捷键](/misc/vscode/)
 
