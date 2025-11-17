@@ -32,6 +32,10 @@ layout: doc
 - [Latex](/fromula/latex/)
 - [latex VSCode 配置](/fromula/latex-vscode/)
 
+## game
+
+- [Minecraft](/game/minecraft/)
+
 ## git
 
 - [常用命令](/git/command/)
