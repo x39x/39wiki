@@ -34,6 +34,8 @@
 
 ## nvim dap 配置
 
+### adapter
+
 需要为每个语言配置 adapter ，例如
 
 ```lua
@@ -47,7 +49,12 @@ dap.adapters.debugpy= {
 
 adapter 是对应的调试器，配置中需要启动命令，参数，类型等等
 
-接着要要给对应语言配置调试方式，可以指定多个
+### configurations
+
+dap 会从 provider 中加载配置，默认dap.configurations 和 .vscode/launch.json
+可以自定义 provider, see https://github.com/mfussenegger/nvim-dap/blob/5860c7c501eb428d3137ee22c522828d20cca0b3/doc/dap.txt#L1381
+
+configurations 里给对应语言配置调试方式，可以指定多个
 
 ```lua
 local python={}
@@ -63,7 +70,83 @@ dap.configurations.python = python
 
 其中 type 是对应调试器的名称
 
+### launch.json
+
+launch.json attributes see https://code.visualstudio.com/docs/debugtest/debugging-configuration#_launchjson-attributes
+
+每个 adapter 会提供一些扩展配置，去 adapter 文档查看，如：https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
+
 ## vim 配置文件加载规则
 
 nvim plugin 、ftplugin、queries是用来覆盖[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
 的，after/plugin 、after/plugin... 是追加
+
+## 插件
+
+### 文件浏览
+
+https://github.com/simonmclean/triptych.nvim
+类似Ranger
+
+```lua
+require("triptych").setup({
+        options = {
+                backdrop = 100,
+        },
+})
+```
+
+https://github.com/stevearc/oil.nvim,
+
+```lua
+require("oil").setup({
+        default_file_explorer = false,
+        delete_to_trash = true,
+        skip_confirm_for_simple_edits = true,
+        watch_for_changes = true,
+        use_default_keymaps = false,
+        keymaps = {
+                ["g?"] = { "actions.show_help", mode = "n" },
+                ["L"] = "actions.select",
+                ["H"] = { "actions.parent", mode = "n" },
+                ["q"] = { "actions.close", mode = "n" },
+                [","] = { "actions.open_cwd", mode = "n" },
+                ["`"] = { "actions.cd", mode = "n" },
+                ["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
+                ["="] = "actions.open_external",
+                ["gs"] = { "actions.change_sort", mode = "n" },
+                ["g."] = { "actions.toggle_hidden", mode = "n" },
+                ["<C-p>"] = { "actions.preview", mode = "n" },
+                ["<C-R>"] = { "actions.refresh", mode = "n" },
+                ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+                ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
+                ["<C-t>"] = { "actions.select", opts = { tab = true } },
+        },
+        view_options = {
+                show_hidden = true,
+        },
+        float = {
+                padding = 0,
+                border = "single",
+                get_win_title = nil,
+                preview_split = "auto",
+                override = function(conf)
+                        local ui = vim.api.nvim_list_uis()[1]
+                        local sidebar_width = math.floor(ui.width * 0.17)
+
+                        -- send to nvim_open_win.
+                        conf = {
+                                relative = "editor",
+                                width = sidebar_width,
+                                height = ui.height,
+                                row = 0,
+                                col = ui.width - sidebar_width,
+                                style = "minimal",
+                                border = "single",
+                        }
+
+                        return conf
+                end,
+        },
+})
+```
