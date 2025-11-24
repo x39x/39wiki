@@ -32,69 +32,6 @@
 - 某些情况下 Vim 绘制高亮慢，滚屏刷新慢可以试试 set re=1 使用老的正则引擎
 - Windows 下的 GVim 可以设置 set rop=type:directx,renmode:5 增强显示
 
-## nvim dap 配置
-
-### adapter
-
-需要为每个语言配置 adapter ，例如
-
-```lua
-dap.adapters.debugpy= {
-        command = python_path,
-        type = "executable",
-        args = { "-m", "debugpy.adapter" },
-        name = "debugpy",
-}
-```
-
-adapter 是对应的调试器，配置中需要启动命令，参数，类型等等
-
-### configurations
-
-dap 会从 provider 中加载配置，默认dap.configurations 和 .vscode/launch.json
-可以自定义 provider, see https://github.com/mfussenegger/nvim-dap/blob/5860c7c501eb428d3137ee22c522828d20cca0b3/doc/dap.txt#L1381
-
-configurations 里给对应语言配置调试方式，可以指定多个
-
-```lua
-local python={}
-python[#python + 1] = {
-        type = "debugpy",
-        name = "Launch File",
-        request = "launch",
-        program = debug_file,
-        pythonPath = python_path,
-}
-dap.configurations.python = python
-```
-
-其中 type 是对应调试器的名称
-
-### launch.json
-
-launch.json attributes see https://code.visualstudio.com/docs/debugtest/debugging-configuration#_launchjson-attributes
-
-每个 adapter 会提供一些扩展配置，去 adapter 文档查看，如：https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
-
-```json
-{
-    "$schema": "https://raw.githubusercontent.com/mfussenegger/dapconfig-schema/master/dapconfig-schema.json",
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "dap name",
-            "type": "adapter name",
-            "request": "launch or attach",
-            "mode": "debug",
-            "program": "debug program",
-            "console": "integratedTerminal",
-            "env": {},
-            "args": []
-        }
-    ]
-}
-```
-
 ## vim 配置文件加载规则
 
 nvim plugin 、ftplugin、queries是用来覆盖[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
@@ -168,4 +105,68 @@ require("oil").setup({
                 end,
         },
 })
+```
+
+## nvim dap 配置
+
+### adapter
+
+需要为每个语言配置 adapter ，例如
+
+```lua
+dap.adapters.debugpy= {
+        command = python_path,
+        type = "executable",
+        args = { "-m", "debugpy.adapter" },
+        name = "debugpy",
+}
+```
+
+adapter 是对应的调试器，配置中需要启动命令，参数，类型等等
+
+### configurations
+
+dap 会从 provider 中加载配置，默认dap.configurations和.vscode/launch.json
+
+可以自定义 provider, see [:help dap](https://github.com/mfussenegger/nvim-dap/blob/5860c7c501eb428d3137ee22c522828d20cca0b3/doc/dap.txt#L1381)
+
+configurations 里给对应adapter配置调试方式，可以指定多个
+
+```lua
+local python={}
+python[#python + 1] = {
+        type = "debugpy",
+        name = "Launch File",
+        request = "launch",
+        program = debug_file,
+        pythonPath = python_path,
+}
+dap.configurations.python = python
+```
+
+其中 type 是对应调试器的名称
+
+### launch.json
+
+launch.json attributes see https://code.visualstudio.com/docs/debugtest/debugging-configuration#_launchjson-attributes
+
+每个 adapter 会提供一些扩展配置，去 adapter 文档查看，如：https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
+
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/mfussenegger/dapconfig-schema/master/dapconfig-schema.json",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dap name",
+            "type": "adapter name",
+            "request": "launch or attach",
+            "mode": "debug",
+            "program": "debug program",
+            "console": "integratedTerminal",
+            "env": {},
+            "args": []
+        }
+    ]
+}
 ```
