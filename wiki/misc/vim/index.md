@@ -76,6 +76,25 @@ launch.json attributes see https://code.visualstudio.com/docs/debugtest/debuggin
 
 每个 adapter 会提供一些扩展配置，去 adapter 文档查看，如：https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
 
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/mfussenegger/dapconfig-schema/master/dapconfig-schema.json",
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dap name",
+            "type": "adapter name",
+            "request": "launch or attach",
+            "mode": "debug",
+            "program": "debug program",
+            "console": "integratedTerminal",
+            "env": {},
+            "args": []
+        }
+    ]
+}
+```
+
 ## vim 配置文件加载规则
 
 nvim plugin 、ftplugin、queries是用来覆盖[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
