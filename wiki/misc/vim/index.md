@@ -144,7 +144,7 @@ python[#python + 1] = {
 dap.configurations.python = python
 ```
 
-其中 type 是对应调试器的名称
+其中 type 是对应adapter的名称
 
 ### launch.json
 
