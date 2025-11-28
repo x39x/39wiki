@@ -1,5 +1,9 @@
 # Tmux 配置与常用操作
 
+## Tips
+
+tmux 更新后需要 kill all session ，否则会得到`open terminal failed: not a terminal`的错误
+
 ## 配置文件
 
 `~/.tmux.conf`
@@ -16,14 +20,14 @@ set -g status-left "foo"
 set -ag status-left "bar"
 ```
 
-#### escape-time
+### escape-time
 
 - `set-option -g escape-time 50`
 
 终端标准 VT220 下面，所有光标，功能键都是一系列以 ESC 字符（ascii 码 0x1b）开头的字符串，使用`showkey -a` 查看
 设置为 0 可以解决 ESC 键延迟，但当 SSH 连接时，tmux中判断功能键和 ALT+字符会经常失效，设置为 50 毫秒即可解决
 
-#### tmux color setting
+### tmux color setting
 
 - default-terminal
 

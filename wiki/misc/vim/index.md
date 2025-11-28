@@ -34,78 +34,40 @@
 
 ## vim 配置文件加载规则
 
-nvim plugin 、ftplugin、queries是用来覆盖[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
-的，after/plugin 、after/plugin... 是追加
+nvim plugin 、ftplugin、queries是在[内置runtime目录](https://github.com/neovim/neovim/blob/master/runtime)
+中的对应目录加载前加载，after/plugin 、after/plugin... 是在runtime目录后加载，可以用来覆盖默认设置
 
-## 插件
+:h runtimepath
 
-### 文件浏览
+:h ftplugin-overrule
 
-https://github.com/simonmclean/triptych.nvim
-类似Ranger
+- plugin autoload
 
-```lua
-require("triptych").setup({
-        options = {
-                backdrop = 100,
-        },
-})
-```
+这两个目录是vimscript插件使用的，其中plugin会在vim启动时加载，autoload里的函数会在调用时加载，nvim插件会用到plugin目录来提供lazy
+load，autoload几乎不使用
 
-https://github.com/stevearc/oil.nvim,
+## quickfix
 
-```lua
-require("oil").setup({
-        default_file_explorer = false,
-        delete_to_trash = true,
-        skip_confirm_for_simple_edits = true,
-        watch_for_changes = true,
-        use_default_keymaps = false,
-        keymaps = {
-                ["g?"] = { "actions.show_help", mode = "n" },
-                ["L"] = "actions.select",
-                ["H"] = { "actions.parent", mode = "n" },
-                ["q"] = { "actions.close", mode = "n" },
-                [","] = { "actions.open_cwd", mode = "n" },
-                ["`"] = { "actions.cd", mode = "n" },
-                ["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
-                ["="] = "actions.open_external",
-                ["gs"] = { "actions.change_sort", mode = "n" },
-                ["g."] = { "actions.toggle_hidden", mode = "n" },
-                ["<C-p>"] = { "actions.preview", mode = "n" },
-                ["<C-R>"] = { "actions.refresh", mode = "n" },
-                ["<C-v>"] = { "actions.select", opts = { vertical = true } },
-                ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
-                ["<C-t>"] = { "actions.select", opts = { tab = true } },
-        },
-        view_options = {
-                show_hidden = true,
-        },
-        float = {
-                padding = 0,
-                border = "single",
-                get_win_title = nil,
-                preview_split = "auto",
-                override = function(conf)
-                        local ui = vim.api.nvim_list_uis()[1]
-                        local sidebar_width = math.floor(ui.width * 0.17)
+localfix 就是针对某个buffer的quickfix，只能在指定buffer打开，几乎没用
 
-                        -- send to nvim_open_win.
-                        conf = {
-                                relative = "editor",
-                                width = sidebar_width,
-                                height = ui.height,
-                                row = 0,
-                                col = ui.width - sidebar_width,
-                                style = "minimal",
-                                border = "single",
-                        }
+使用`vimgrep options *.html / grep options *.lua`会把结果发送到quickfix窗口里
 
-                        return conf
-                end,
-        },
-})
-```
+cope : copen
+ccl : cclose
+cn : cnext ]q
+cp : cprev [q
+cdo : 给每个quickfix结果执行
+caddfile/caddbuffer/caddexpr : 加载错误信息
+
+more see :h fuickfix
+
+make 会把错误信息发送到quickfix，
+make默认是执行make命令，可以通过makeprg设置，比如 set makeprg=go\ build，
+可以在make后追加参数，比如make test 、make %
+
+quickfix 接受错误信息的格式要通过errorformat设置
+
+runtime/compiler里设置一些常见编译器/lint的makeprg和errorformat，可以通过compiler xxx命令启用，如compiler cargo
 
 ## nvim dap 配置
 
