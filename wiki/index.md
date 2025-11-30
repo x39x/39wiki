@@ -38,6 +38,7 @@ layout: doc
 
 ## git
 
+- [add](/git/add/)
 - [常用命令](/git/command/)
 - [commit 撤销、丢弃](/git/commit/)
 - [基本配置](/git/config/)
