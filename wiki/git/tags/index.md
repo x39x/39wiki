@@ -1,5 +1,9 @@
 # tags
 
+语义化版本
+
+https://semver.org/lang/zh-CN/
+
 ```sh
 # show tag
 git tag
