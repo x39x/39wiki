@@ -46,6 +46,7 @@ layout: doc
 - [merge and rebase](/git/merge-rebase/)
 - [文件恢复、撤销修改等](/git/recover/)
 - [remote](/git/remote/)
+- [submodule](/git/submodule/)
 - [tags](/git/tags/)
 
 ## golang
