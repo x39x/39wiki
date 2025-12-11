@@ -52,12 +52,12 @@ localfix 就是针对某个buffer的quickfix，只能在指定buffer打开，几
 
 使用`vimgrep options *.html / grep options *.lua`会把结果发送到quickfix窗口里
 
-cope : copen
-ccl : cclose
-cn : cnext ]q
-cp : cprev [q
-cdo : 给每个quickfix结果执行
-caddfile/caddbuffer/caddexpr : 加载错误信息
+- cope : copen
+- ccl : cclose
+- cn : cnext ]q
+- cp : cprev [q
+- cdo : 给每个quickfix结果执行
+- caddfile/caddbuffer/caddexpr : 加载错误信息
 
 more see :h fuickfix
 
