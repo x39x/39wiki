@@ -1,5 +1,17 @@
 # arch 安装
 
+## boot
+
+https://wiki.archlinuxcn.org/wiki/Systemd-boot
+
+https://www.cnblogs.com/Pingjiadoge/p/19130160
+
+https://zhuanlan.zhihu.com/p/656680599
+
+https://zhuanlan.zhihu.com/p/682419545
+
+https://dev.to/je12emy/setting-up-dual-boot-with-windows-and-arch-linux-using-systemd-boot-2c24 windows
+
 ## 硬盘分区
 
 Eg: 8g+128g
