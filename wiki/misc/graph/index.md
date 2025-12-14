@@ -1,5 +1,25 @@
 # 图形、渲染
 
+## 资料
+
+- https://github.com/love2d/love
+
+专注于2d的游戏引擎，小丑牌基于此，lua
+
+- https://github.com/raysan5/raylib
+
+基于OpenGL/GLFW的c库
+
+https://zhuanlan.zhihu.com/p/458335134
+
+- https://easyvulkan.github.io/
+
+vulkan 教程
+
+- https://metaltutorial.com/
+
+metal 教程
+
 ## 常见图形API
 
 ### OpenGL
@@ -33,14 +53,14 @@
 
 ### Metal
 
-- **特点**：苹果公司开发的图形和计算 API。
+- **特点**：苹果开发的图形和计算 API。
 - **用途**：优化 macOS 和 iOS 平台的图形性能。
 - **优势**：
     - 深度整合苹果硬件。
     - 支持高效的多线程渲染。
 - **限制**：仅支持苹果设备。
 
-## 高级框架和引擎（封装了底层 API）
+## 高级框架和引擎
 
 这些工具在底层 API（如 OpenGL、Vulkan）之上构建，提供更易用的接口。
 
@@ -68,15 +88,9 @@
     - 提供统一的接口屏蔽底层差异。
     - 适合轻量级项目。
 
-### Three.js
+## 专注于其他领域的图形技术
 
-- **类型**：JavaScript 图形库。
-- **用途**：在浏览器中实现 3D 渲染。
-- **底层**：基于 WebGL。
-
-## 专注于其他领域的图形 API
-
-这些 API 可能不是直接面向 3D 游戏，但在专业领域中非常重要。
+在专业领域中非常重要。
 
 ### WebGPU
 
