@@ -1,5 +1,9 @@
 # 常用工具
 
+- https://github.com/XAMPPRocky/tokei
+
+计算代码行数
+
 ```bash
 xxd #查看二进制
 objdump #查看二进制
