@@ -74,6 +74,7 @@ layout: doc
 
 - [常见音频格式](/misc/audio/)
 - [图形、渲染](/misc/graph/)
+- [MacOS](/misc/macos/)
 - [macOS ACL 权限管理](/misc/macOS_ACL/)
 - [Makefile 简明教程](/misc/makefile/)
 - [静态网页生成](/misc/staticweb/)
