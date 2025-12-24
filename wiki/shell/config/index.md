@@ -31,3 +31,13 @@ zprofile: login , zshenv: always
 ### 非登陆shell
 
 只加载xxshrc
+
+## zsh config
+
+```sh
+setopt emacs
+setopt AUTO_CD
+unsetopt BEEP
+export CLICOLOR=1
+export PS1=$'\n%n@%m:\e[0;34m%~\e[0m\n$ '
+```
