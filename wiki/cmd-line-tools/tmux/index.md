@@ -8,9 +8,29 @@ tmux 更新后需要 kill all session ，否则会得到`open terminal failed: n
 
 `~/.tmux.conf`
 
-- tmux 配置中-a表示appen，-g表示global
-- `set = set-option` ,`setw = set-option -w = set-window-option`
-- `set-window-option` used to allow-rename, mode-keys, synchronize-panes, etc.
+`set = set-option` ,`setw = set-option -w = set-window-option`
+
+-s / -g / -w / -p 决定作用域；
+
+-a 追加，-u 取消；
+
+-g 不是“全局一切”，而是“全局 session / 全局 window”
+
+| 作用域  | 说明                      | 常用命令 |
+| ------- | ------------------------- | -------- |
+| session | 会话级别                  | set      |
+| server  | tmux 服务器级别，全局唯一 | set -s   |
+| window  | 窗口级别                  | set -w   |
+| pane    | 面板级别                  | set -p   |
+
+- 继承关系
+
+global → session → window → pane
+
+- 没设置的会继承上层
+- pane 会继承 window
+- window 会继承 global window option
+- session 会继承 global session option
 
 ### sattusbar
 
