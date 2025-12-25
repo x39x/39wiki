@@ -1,4 +1,4 @@
-# macOS ACL 权限管理
+# ACL 权限管理
 
 ACL（Access Control List）用于为特定用户或组设置精细化访问权限
 

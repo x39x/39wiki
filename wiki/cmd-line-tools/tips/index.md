@@ -1,8 +1,20 @@
 # 常用工具
 
-- https://github.com/XAMPPRocky/tokei
+## 计算代码行数
 
-计算代码行数
+https://github.com/XAMPPRocky/tokei
+
+## 画图
+
+gnuplot
+
+## 测试网络
+
+```sh
+curl https://clients3.google.com
+```
+
+this URL is the best option to ping as it should work 24/7 without maintenance pause
 
 ```bash
 xxd #查看二进制

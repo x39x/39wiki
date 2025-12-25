@@ -1,6 +1,4 @@
-# MacOS
-
-## Command Line Tools 加载机制
+# Command Line Tools 加载机制
 
 Command Line Tools默认安装在：
 
@@ -10,7 +8,7 @@ Command Line Tools默认安装在：
 
 /Library/Developer/CommandLineTools/usr/bin
 
-### PATH
+## PATH
 
 该目录 **不会被自动加入 PATH**。
 
@@ -41,7 +39,7 @@ xcode-select -p
 /Applications/Xcode.app/Contents/Developer
 ```
 
-### shim 的工作方式
+## shim 的工作方式
 
 ```sh
 # 当执行：
@@ -67,7 +65,7 @@ xcrun --find git
 xcrun --find clang
 ```
 
-### 为什么不用软链接
+## 为什么不用软链接
 
 Apple 没有将 /usr/bin/gcc 指向某个固定路径的原因：
 
@@ -76,7 +74,7 @@ Apple 没有将 /usr/bin/gcc 指向某个固定路径的原因：
 - /usr/bin 受系统完整性保护（SIP），作为稳定入口存在
 - shim 机制允许统一调度所有开发工具
 
-### 工具链切换
+## 工具链切换
 
 切换当前使用的开发工具目录：
 
