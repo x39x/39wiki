@@ -60,6 +60,7 @@ layout: doc
 - [常用命令](/linux/command/)
 - [CPU 策略](/linux/cpupower/)
 - [系统拯救](/linux/recover/)
+- [恢复文件](/linux/recover-file/)
 - [Systemd 使用](/linux/systemd/)
 - **config**
     - [新系统基本配置](/linux/config/base/)
