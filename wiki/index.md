@@ -22,7 +22,6 @@ layout: doc
 - [Mac 配置 Scheme 环境](/dev-setup/apple_scheme/)
 - [C/C++](/dev-setup/cpp/)
 - [Java jdk](/dev-setup/java/)
-- [MacOS 新机开发环境配置](/dev-setup/mac-config/)
 - [Nodejs 环境| 版本](/dev-setup/node_env/)
 - [Python 虚拟环境](/dev-setup/python-venv/)
 - [Rust 安装与环境变量配置](/dev-setup/rustenv/)
@@ -73,7 +72,10 @@ layout: doc
 ## macos
 
 - [ACL 权限管理](/macos/ACL/)
+- [Homebrew](/macos/brew/)
 - [Command Line Tools 加载机制](/macos/cmd_line_tools/)
+- [MacOS 新机开发环境配置](/macos/config/)
+- [Tips](/macos/tips/)
 
 ## misc
 
