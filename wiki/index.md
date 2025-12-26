@@ -23,7 +23,7 @@ layout: doc
 - [C/C++](/dev-setup/cpp/)
 - [Java jdk](/dev-setup/java/)
 - [Nodejs 环境| 版本](/dev-setup/node_env/)
-- [Python 虚拟环境](/dev-setup/python-venv/)
+- [Python 虚拟环境及工具链](/dev-setup/python-venv/)
 - [Rust 安装与环境变量配置](/dev-setup/rustenv/)
 
 ## fromula

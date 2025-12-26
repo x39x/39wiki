@@ -1,6 +1,8 @@
-# Python 虚拟环境
+# Python 虚拟环境及工具链
 
 ## Python Version Control: uv
+
+基本用法
 
 ```sh
 brew install uv
@@ -11,6 +13,38 @@ uv python list
 uv python use 3.13
 uv sync
 uv run main.py # 会使用 .python-version 指定的版本运行
+```
+
+uv add 与 uv pip 不同，参考：https://github.com/astral-sh/uv/issues/9219#issuecomment-2487159539
+
+### ruff
+
+1. 临时执行
+
+```sh
+uvx ruff format
+uvx ruff check
+```
+
+会把ruff下载到项目目录下的 `.ruff_cache` 里，可以不用安装就执行
+
+2. 安装到项目里
+
+```sh
+uv add --dev ruff
+uv run ruff check
+```
+
+也可以激活虚拟环境后直接执行 `ruff check`
+
+3. 全局安装
+
+```sh
+uv tool install ruff@latest
+brew install ruff
+
+ruff check
+ruff format
 ```
 
 ## Python venv
