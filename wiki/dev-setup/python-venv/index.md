@@ -47,6 +47,10 @@ ruff check
 ruff format
 ```
 
+### ty
+
+安装同ruff，可以使用uv run ty server启动，uv run 优先执行项目级ty，可以使用uv run which ty测试
+
 ## Python venv
 
 python自带的虚拟环境管理

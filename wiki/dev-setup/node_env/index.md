@@ -5,7 +5,7 @@ Node.js 有两个主要的发布版本：
 1. Current (当前版本): 最新的功能版本，可能包含新特性和改进，但不保证长期稳定性。
 2. LTS (长期支持版本): 经过充分测试并得到长期支持，适合生产环境使用，通常每个 LTS 版本会在发布后的 30 个月内收到更新和支持。
 
-brew 默认是 Current ，推荐使用 LTS ，一般是 Current 版本号减二或者减二（LTS都是偶数版本）
+brew 默认是 Current ，推荐使用 LTS ，一般是 Current 版本号减一或者减二（LTS都是偶数版本）
 
 ```sh
 brew install node@LTS
