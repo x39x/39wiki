@@ -1,74 +1,41 @@
-# 基础命令
+# 常用命令
 
-[MIT-shell](https://missing.csail.mit.edu/2020/course-shell/)
-
-[MIT-shell_tools](https://missing.csail.mit.edu/2020/shell-tools/)
+脚本里会用到的，非外部工具，尽量举例说明
 
 ## TODO
-
-## ln
 
 ```sh
 #Creates a physical link.
 ln file1 file2
 
 #Creates a symbolic link.
-- ln -s file1 file2
+- ln -s source_file target
 ```
 
-## Basic Terminal Navigation
+```bash
+xxd #查看二进制
+objdump #查看二进制
+file #查看文件信息
+ps -e
+```
 
-- ls 
-
-To get the list of all the files or folders.
-
-- cd
-
-Used to change the directory.
-
-- du
+## du
 
 Show disk usage.
 
-- pwd
-
-Show the present working directory.
-
-- man
-
-Used to show the manual of any command present in Linux.
-
-- rmdir
-
-It is used to delete a directory if it is empty.
-
-- locate
+## locate
 
  It is used to locate a file in Linux System
 
-- echo
-
- This command helps us move some data, usually text into a file.
-
-- df
+## df
 
  It is used to see the available disk space in each of the partitions in your system.
 
-- tar
+## tar
 
  Used to work with tarballs (or files compressed in a tarball archive)
 
-## File and Directory
-
-- mkdir 
-
-Used to create a directory if not already exist. It accepts the directory name as an input parameter.
-
-- cp 
-
-This command will copy the files and directories from the source path to the destination path. It can copy a file/directory with the new name to the destination path. It accepts the source file/directory and destination file/directory.
-
-- mv 
+## mv 
 
 Used to move the files or directories. This command’s working is almost similar to *cp* command but it deletes a copy of the file or directory from the source path. - Move multiple files
 
@@ -77,21 +44,15 @@ mv a.py b.py c.py Dir
 mv a b c -t Dir
 ```
 
-- rm
-
-Used to remove files or directories.
-
-## File Permissions
-
-- chown 
+## chown 
 
 Used to change the owner of the file.
 
-- chgrp 
+## chgrp 
 
 Used to change the group owner of the file.
 
-- chmod 
+## chmod 
 
 Used to modify the access/permission of a user.
 
@@ -101,56 +62,46 @@ Used to modify the access/permission of a user.
 #=: add some permissions and can other permissions(if has)
 #r: read x:Executable w: write
 chmod +w file.sh
+# 所有者读写权限（6），所属组有读权限（4），其他用户没有权限（0）
+sudo chmod 640 .sshkey/id_rsa
 ```
 
-## Displaying the file contents
-
-- cat
-
-It is generally used to concatenate the files. It gives the output on the standard output.
-
-- more
+## more
 
 It is a filter for paging through text one screenful at a time.
 
-- less
+## less
 
 It is used to viewing the files instead of opening the file.Similar to *more* command but it allows backward as well as forward movement.
 
-- head 
+## head 
 
 Used to print the first N lines of a file. It accepts N as input and the default value of N is 10.
 
-- tail 
+## tail 
 
 Used to print the last N-1 lines of a file. It accepts N as input and the default value of N is 10.
 
-## Extract, sort, and filter
-
-- grep 
+## grep 
 
 This command is used to search for the specified text in a file.
 
-- grep with Regular Expressions:
-
-Used to search for text using specific regular expressions in file.
-
-- sort 
+## sort 
 
 This command is used to sort the contents of files.
 
-- wc 
+## wc 
 
 Used to count the number of characters, words in a file.
 
-- cut 
+## cut 
 
 Used to cut a specified part of a file.
 
-- awk
+## awk
 
 command line数据处理
 
-- sed
+## sed
 
 截取文件内容，格式匹配

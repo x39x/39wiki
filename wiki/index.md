@@ -9,14 +9,6 @@ layout: doc
 
 
 
-## cmd-line-tools
-
-- [命令行的艺术](/cmd-line-tools/cmdl-arts/)
-- [tar 用法](/cmd-line-tools/tar/)
-- [常用工具](/cmd-line-tools/tips/)
-- [Tmux 配置与常用操作](/cmd-line-tools/tmux/)
-- [zip](/cmd-line-tools/zip/)
-
 ## dev-setup
 
 - [Mac 配置 Scheme 环境](/dev-setup/apple_scheme/)
@@ -74,7 +66,7 @@ layout: doc
 
 - [ACL 权限管理](/macos/ACL/)
 - [Homebrew](/macos/brew/)
-- [Command Line Tools 加载机制](/macos/cmd_line_tools/)
+- [Command Line Tools 加载机制](/macos/cmd-line-tools/)
 - [MacOS 新机开发环境配置](/macos/config/)
 - [Tips](/macos/tips/)
 
@@ -90,12 +82,16 @@ layout: doc
 
 ## shell
 
-- [基础命令](/shell/base/)
+- [常用命令](/shell/base/)
 - [配置｜配置文件加载](/shell/config/)
 - [fish](/shell/fish/)
-- [笔记｜技巧](/shell/notes/)
-- [语法｜sh/bash](/shell/sh/)
+- [笔记｜技巧｜工具](/shell/notes/)
+- [sh/bash语法](/shell/sh/)
 - [快捷键](/shell/shourtcut/)
+- **cmd-line-tools**
+    - [tar](/shell/cmd-line-tools/tar/)
+    - [Tmux 配置与常用操作](/shell/cmd-line-tools/tmux/)
+    - [zip](/shell/cmd-line-tools/zip/)
 
 ## ssh
 

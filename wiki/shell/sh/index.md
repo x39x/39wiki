@@ -1,6 +1,10 @@
-# 语法｜sh/bash
+# sh/bash语法
 
-https://github.com/dylanaraps/pure-bash-bible
+- [ 命令行的艺术 ](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+- [pure bash bible](https://github.com/dylanaraps/pure-bash-bible)
+- [pure sh bible](https://github.com/dylanaraps/pure-sh-bible)
+- [MIT shell](https://missing.csail.mit.edu/2020/course-shell/)
+- [MIT shell tools](https://missing.csail.mit.edu/2020/shell-tools/)
 
 ## 重定向
 
@@ -195,7 +199,14 @@ bash: USERNAME: USERNAME is not set
 source "$HOME/.cargo/env"
 ```
 
-### `[]` 是`test`的别名
+### `[` 是`test`的别名
+
+`[`并不是shell语法，而是一条命令
+
+```sh
+which [
+/bin/[
+```
 
 判断一个条件如:
 
@@ -217,4 +228,11 @@ source "$HOME/.cargo/env"
 
 ```bash
 printf "$desktop_path"
+```
+
+### 引号、反引号
+
+```sh
+#  `` 中内容优先执行
+str=`echo 'Hello World'`
 ```

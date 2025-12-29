@@ -1,9 +1,4 @@
-# 笔记｜技巧
-
-```sh
-#  `` 中内容优先执行
-str=`echo 'Hello World'`
-```
+# 笔记｜技巧｜工具
 
 ## replace character
 
@@ -46,24 +41,20 @@ sleep 100 &
 
 5. nohup 表示 no hang up ，常住后台，关闭终端不影响
 
-## 软连接
+## 测试网络
 
-`ln -s 源文件 目标文件`
+```sh
+curl https://clients3.google.com
+```
 
-## Mac特殊命令
+this URL is the best option to ping as it should work 24/7 without maintenance pause
 
-`pbcopy/bpaste`
+## 一些命令行工具收集
 
-复制文件到剪切板/粘贴文件到剪切板
+- 计算代码行数
 
-`shutdown -h +60`
+https://github.com/XAMPPRocky/tokei
 
-shutdown after 60mins
+- 画图
 
-`networkquality`
-
-network speed test
-
-`memory_pressure `
-
-查看内存使用情况
+gnuplot
