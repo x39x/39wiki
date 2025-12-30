@@ -4,6 +4,10 @@
 
 ## 安装 `sudo` 并添加用户
 
+> 可以使用 systemd run0
+> 需要安装 [polkit](https://archlinux.org/packages/?name=polkit)
+> 参考 https://wiki.archlinuxcn.org/wiki/Polkit
+
 ```bash
 su --login (or su -简写形式) # 需要root密码
 apt update

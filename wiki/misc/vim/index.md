@@ -2,6 +2,8 @@
 
 [Cheatsheet](https://github.com/skywind3000/awesome-cheatsheets)
 
+[Cheatsheet](https://vim.rtorr.com/lang/zh_cn)
+
 ## 执行外部命令
 
 - `:!cmd`执行命令行命令把他的stdout指向vim的消息窗口
