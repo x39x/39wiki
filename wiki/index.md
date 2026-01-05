@@ -74,6 +74,7 @@ layout: doc
 
 - [常见音频格式](/misc/audio/)
 - [图形、渲染](/misc/graph/)
+- [lua](/misc/lua/)
 - [Makefile 简明教程](/misc/makefile/)
 - [纸媒](/misc/news/)
 - [静态网页生成](/misc/staticweb/)
