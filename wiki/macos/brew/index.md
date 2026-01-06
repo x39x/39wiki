@@ -37,3 +37,23 @@ brew bundle dump --describe --force --file="~/.dotfile/Brewfile"
 # 批量安装软件
 brew bundle --file="~/.dotfile/Brewfile"
 ```
+
+## Cask upgrade
+
+https://github.com/buo/homebrew-cask-upgrade
+
+可以使用brew升级cask
+
+### install
+
+```sh
+brew tap buo/cask-upgrade
+```
+
+### Usage
+
+```sh
+brew cu
+brew cu [CASK]
+brew cu -a -f
+```
