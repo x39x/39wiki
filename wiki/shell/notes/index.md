@@ -58,3 +58,46 @@ https://github.com/XAMPPRocky/tokei
 - 画图
 
 gnuplot
+
+## 进程替换 Process Substitution
+
+bash/zsh的特性
+
+```sh
+<(command)   # 把 command 的“输出”当成文件
+>(command)   # 把 command 的“输入”当成文件
+```
+
+查看临时文件
+
+```sh
+ls <(pwd)
+# /dev/fd/33
+```
+
+### 执行顺序
+
+```sh
+diff <(ls) <(ls -a)
+```
+
+1. Bash 提前 fork 子进程
+2. 执行 ls
+3. 把 ls 的 stdout 接到一个 pipe
+4. 把 pipe 的读端暴露成 /dev/fd/XX
+5. 把这个路径字符串传给 diff
+
+即首先执行ls，将结果pipe到一个临时文件，接着执行
+
+```sh
+diff /dev/fd/63 /dev/fd/64
+```
+
+### >()
+
+```sh
+# tee 写入两个“文件” 实际是写入两个命令的 stdin
+echo "hello" | tee >(grep h) >(wc -c)
+# 重定向 stdout 到命令
+ls > >(grep py)
+```
