@@ -77,6 +77,7 @@ layout: doc
 - [lua](/misc/lua/)
 - [Makefile 简明教程](/misc/makefile/)
 - [纸媒](/misc/news/)
+- [proxy](/misc/proxy/)
 - [静态网页生成](/misc/staticweb/)
 - [vim 笔记](/misc/vim/)
 - [VSCode 快捷键](/misc/vscode/)
