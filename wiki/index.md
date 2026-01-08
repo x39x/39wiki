@@ -68,6 +68,7 @@ layout: doc
 - [Homebrew](/macos/brew/)
 - [Command Line Tools 加载机制](/macos/cmd-line-tools/)
 - [MacOS 新机开发环境配置](/macos/config/)
+- [Shortcuts](/macos/shortcut/)
 - [Tips](/macos/tips/)
 
 ## misc
