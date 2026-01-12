@@ -40,7 +40,7 @@ aac后缀指AAC 编码的音频 + ADTS（Audio Data Transport Stream）头部的
 
 ### Vorbis
 
-开源，常见与ogg格式中，spotify使用 vorbis
+开源，常见于ogg格式中，spotify使用 vorbis
 
 ### Opus
 
