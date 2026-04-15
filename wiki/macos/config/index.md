@@ -10,7 +10,7 @@
  `->` System Settings `->` Apple Account `->` iCloud `->` Drive.
 turned on `Sync this Mac` and `Desktop & Documents Folders`
 
-![icloud](https://image.baidu.com/search/down?url=https://tvax1.sinaimg.cn/large/008IpWfqgy1i66emaq9e7j319y14ytqk.jpg)
+![icloud](./icloud.png)
 
 打开 iCloud 等待 Clash 安装包同步，顺便修改鼠标速度，方便后续操作
 
@@ -72,7 +72,7 @@ keka the‐unarchiver
 iina xld fliqlo
 ```
 
-![sc](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66enabbf9j32c01iuncg.jpg)
+![sc](./sc.png)
 
 - **Fliqlo：** 简约风 Screen Saver
 - **IINA：** 一款开源的视频播放器
@@ -86,11 +86,11 @@ iina xld fliqlo
 
 ### Bob：翻译软件，支持 OCR 翻译
 
-![bob](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66ekj20xdj30rc0ky0vs.jpg)
+![bob](./bob.png)
 
 ### Craft Doc：笔记
 
-![craft](https://image.baidu.com/search/down?url=https://tvax4.sinaimg.cn/large/008IpWfqgy1i66elu8idbj31r41cw4qp.jpg)
+![craft](./craft.png)
 
 ## 系统设置
 
