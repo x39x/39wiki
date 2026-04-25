@@ -128,3 +128,21 @@ setfacl --remove u:username path/to/file_or_directory
 setfacl --remove-all path/to/file_or_directory
 
 ```
+
+## U盘
+
+```sh
+lsblk
+#或者：
+dmesg | tail
+#通常U盘会出现在 /dev/sdX，如 /dev/sdb1。
+
+#创建挂载点并挂载：
+sudo mkdir /mnt/usb
+sudo mount /dev/sdb1 /mnt/usb
+
+cp -r /mnt/usb/Documents ~/
+
+#卸载U盘：
+sudo umount /mnt/usb
+```

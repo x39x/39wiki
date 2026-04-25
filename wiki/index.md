@@ -73,10 +73,10 @@ layout: doc
 
 ## misc
 
-- [常见音频格式](/misc/audio/)
 - [图形、渲染](/misc/graph/)
 - [lua](/misc/lua/)
 - [Makefile 简明教程](/misc/makefile/)
+- [流媒体编解码、格式](/misc/media/)
 - [纸媒](/misc/news/)
 - [proxy](/misc/proxy/)
 - [静态网页生成](/misc/staticweb/)

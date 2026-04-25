@@ -276,6 +276,9 @@ dap.configurations.python = python
 
 其中 type 是对应adapter的名称
 
+> 在debugpy等调试器中，并不严格检测type名称，但在vscode-js-debug有多种调试类型的调试器中，type必须严格按照它定义的type来写，如`pwa-node`
+> `pwa-chrome`
+
 ### launch.json
 
 launch.json attributes see https://code.visualstudio.com/docs/debugtest/debugging-configuration#_launchjson-attributes
