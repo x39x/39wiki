@@ -30,8 +30,17 @@ function f() {
 console.log(a); // 1
 ```
 
+### [mitt ](https://github.com/developit/mitt)
+
+mitt 是一个轻量级的JavaScript事件总线库
+
+https://blog.ymzhao.work/study/source-code/mitt
+
+### others
+
 - https://github.com/vladocar/nanoJS
 - https://github.com/gnat/surreal
 - https://github.com/fabiospampinato/cash
-- https://github.com/developit/mitt
 - https://github.com/jamiebuilds/the-super-tiny-compiler
+
+[ CommonJs和ES6 module ](https://www.zhihu.com/question/62791509)
