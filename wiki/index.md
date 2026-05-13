@@ -3,11 +3,7 @@ title: 39wiki
 layout: doc
 ---
 
-<div align="left" dir="auto" >
-    <img src="/miku.svg" width="39%" alt="✨">
-</div>
-
-
+<small>**个人笔记，仅做记录用，请酌情参考**</small>
 
 ## dev-setup
 
@@ -22,10 +18,6 @@ layout: doc
 
 - [Latex](/fromula/latex/)
 - [latex VSCode 配置](/fromula/latex-vscode/)
-
-## game
-
-- [Minecraft](/game/minecraft/)
 
 ## git
 

@@ -5,10 +5,7 @@ const rootDir = "./wiki";
 const excludeDir = new Set(["public"]);
 
 // 读取 index.md 的标题
-async function getNoteTitle(
-    indexPath: string,
-    fallback: string,
-): Promise<string> {
+async function getNoteTitle(indexPath: string, fallback: string): Promise<string> {
     try {
         const content = await fs.readFile(indexPath, "utf-8");
         const titleLine = content
@@ -45,11 +42,7 @@ async function sortDirsByType(parentPath: string, dirs: any[]): Promise<any[]> {
 }
 
 // 递归遍历目录
-async function walkDir(
-    dirPath: string,
-    relativePath: string,
-    indentLevel = 0,
-): Promise<string[]> {
+async function walkDir(dirPath: string, relativePath: string, indentLevel = 0): Promise<string[]> {
     const lines: string[] = [];
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
 
@@ -86,9 +79,7 @@ async function walkDir(
         } else if (await fileExists(indexPath)) {
             // 是笔记目录（有 index.md）
             const title = await getNoteTitle(indexPath, dir.name);
-            lines.push(
-                `${indent}- [${title}](/${join(relativePath, dir.name)}/)`,
-            );
+            lines.push(`${indent}- [${title}](/${join(relativePath, dir.name)}/)`);
         }
     }
 
@@ -133,7 +124,7 @@ const indexMD = await fs.readFile(indexPath, "utf-8");
 existingLines = indexMD.split(/\r?\n/);
 
 // 保留前五行 frontmatter
-const keep = existingLines.slice(0, 10);
+const keep = existingLines.slice(0, 6);
 const newContent = [...keep, "", content, ""].join("\n");
 await fs.writeFile(indexPath, newContent, "utf-8");
 
