@@ -18,21 +18,36 @@ sudo spctl --master-enable  # 开启
 
 mac专有的命令行操作
 
-- `pbcopy/bpaste`
+#### 复制文件到剪切板/粘贴文件到剪切板
 
-复制文件到剪切板/粘贴文件到剪切板
+```
+pbcopy/bpaste
+```
 
-- `shutdown -h +60`
+#### shutdown after 60mins
 
-shutdown after 60mins
+```sh
+shutdown -h +60
+```
 
-- `networkquality`
+#### network speed test
 
-network speed test
+```sh
+networkquality
+```
 
-- `memory_pressure `
+#### 查看内存使用情况
 
-查看内存使用情况
+```sh
+memory_pressure
+```
+
+#### 获取自己公网ip
+
+```sh
+# 注意 clash tun
+curl [ipinfo.io/ip](https://ipinfo.io/ip)
+```
 
 ## Emoj Shortcuts
 

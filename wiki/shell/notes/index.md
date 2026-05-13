@@ -1,5 +1,11 @@
 # 笔记｜技巧｜工具
 
+## bash zsh
+
+zsh把“命令行输入框”当成一个可编程对（ZLE） bash 只是 readline 的一层绑定
+
+zsh 在交互、插件开发等方面更出色，比bash更易用，但速度略慢于zsh
+
 ## replace character
 
 ```sh
