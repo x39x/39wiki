@@ -39,7 +39,7 @@ ssh -i ~/.sshkey/id_fedora -p 2222 user1@xxx.xxx.xxx.xxx
 ## id_rsa 和 id_rsa.pub 文件权限
 
 如果私钥权限过低会出现一下错误
-![ssh_error](https://image.baidu.com/search/down?url=https://tvax1.sinaimg.cn/large/008IpWfqly1i66e09y1zsj30ry08e77c.jpg)
+![ssh_error](./ssh_error.png)
 
 私钥、公钥应该保证除 root 用户外都不可写，除连接用户外都不可读，
 

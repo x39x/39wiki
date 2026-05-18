@@ -3,7 +3,7 @@
 最近重装系统，记录一下新系统配置流程
 
 大部分软件都需要从需要通过Homebrew安装，鉴于糟糕的网络情况:(
-需要在 iCloud 备份一个 Clash 安装包或通过外区 App Store 安装 Shadowrocket，
+需要在 iCloud 备份一个 Clash 安装包或通过非国区 App Store 安装 Shadowrocket，
 
 ### Turn on iCloud Drive Sync
 
@@ -12,7 +12,7 @@ turned on `Sync this Mac` and `Desktop & Documents Folders`
 
 ![icloud](./icloud.png)
 
-打开 iCloud 等待 Clash 安装包同步，顺便修改鼠标速度，方便后续操作
+打开 iCloud 等待 Clash 安装包同步，修改鼠标/触控板速度，方便后续操作
 
 安装完成后给终端配置代理，安装 Homebrew
 
@@ -25,17 +25,20 @@ turned on `Sync this Mac` and `Desktop & Documents Folders`
 同步配置文件
 
 ```sh
-git clone https://github.com/x39x/config ~/.dotfile
-cd ~/.dotfile && ./install
+git clone https://github.com/x39x/dotfiles ~/.dotfiles
+cd ~/.dotfiles && make
 ```
 
 常用工具
 
-```txt
-alacritty ghostty font-iosevka-term-nerd-font
+```py
+# 终端
+alacritty ghostty
+# 字体
+font-iosevka-term-nerd-font
+# base
 zoxide tree yazi fd ripgrep fzf
-bat difftastic neovim fish tldr
-typst tmux cmake
+bat difftastic neovim fish tldr tmux cmake
 ```
 
 编程环境配置
@@ -53,16 +56,16 @@ node@lts uv golang rust
 
 ### 常用
 
-```txt
+```py
 raycast hammerspoon karabiner‐elements
-wechat qq discord steam
-google-chrome arc chatgpt
-skim visual‐studio‐code keycastr
+wechat qq steam google-chrome chatgpt
+mac-mouse-fix skim keycastr
+visual‐studio‐code
 ```
 
 ### 解压和压缩
 
-```txt
+```py
 keka the‐unarchiver
 ```
 

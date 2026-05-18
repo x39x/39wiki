@@ -22,14 +22,16 @@ layout: doc
 ## git
 
 - [add](/git/add/)
+- [checkout](/git/checkout/)
 - [常用命令](/git/command/)
-- [commit 撤销、丢弃](/git/commit/)
+- [commit / revert](/git/commit/)
 - [基本配置](/git/config/)
 - [github](/git/github/)
 - [gitignore](/git/ignore/)
 - [merge and rebase](/git/merge-rebase/)
-- [文件恢复、撤销修改等](/git/recover/)
 - [remote](/git/remote/)
+- [reset](/git/reset/)
+- [restore](/git/restroe/)
 - [托管服务](/git/server/)
 - [submodule](/git/submodule/)
 - [tags](/git/tags/)

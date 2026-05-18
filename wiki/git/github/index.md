@@ -8,7 +8,7 @@
 ```sh
 echo "# hello" >> README.md
 git init
-git branch -M main
+git branch -M main # rename
 git add README.md
 git commit -m "first commit"
 git remote add remote_name https://github.com/user/xxx.git
@@ -28,7 +28,7 @@ git push -u origin main
 
 ### 生成密钥
 
-[参考：SSH 密钥登录及相关配置](https://x39x.cc/wiki/ssh-passkey)
+[参考：SSH 密钥登录及相关配置](/ssh/passkey/)
 
 ```bash
 cd ~/.ssh

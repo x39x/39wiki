@@ -1,7 +1,5 @@
 # 基本配置
 
-## Basic Setting
-
 Git 相关配置保存在 ~/.gitconfig 或 ~/.config/git/config 中用`git config --list`可以查看, `git config <key>`查看单个配置
 
 ```toml

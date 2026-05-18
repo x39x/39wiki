@@ -15,6 +15,15 @@ git merge (branch_name)
 git rebase --onto master (server client 范围)
 ```
 
+## squash
+
+`--squash` 选项的含义是：拿过该分支的改动，但丢弃该分支的commit信息，不提交、不移动HEAD，因此需要一条额外的commit命令。其效果相当于将another分支上的多个commit合并成一个，放在当前分支上，原来的commit历史则没有拿过来。
+
+```bash
+git merge/rebase --squash developing
+git commit -m "message here"
+```
+
 ## git rebase -i 交互式变基
 
 ### 基本命令
@@ -70,22 +79,23 @@ reword 9abc012 Refactor code
 
 - 遇到冲突时：
 
-    ```bash
-    # 解决冲突后
-    git add <filename>
-    git rebase --continue
-    ```
+```bash
+# 解决冲突后
+git add <filename>
+git rebase --continue
+```
 
 - 放弃变基：
 
-    ```bash
-    git rebase --abort
-    ```
+```bash
+git rebase --abort
+```
 
-- 跳过当前提交（不推荐）：
-    ```bash
-    git rebase --skip
-    ```
+- 跳过当前提交：
+
+```bash
+git rebase --skip
+```
 
 ### 使用场景
 
