@@ -23,8 +23,6 @@ Eg: 8g+128g
 | **根分区 `/`**       | ext4     | 40GB | `/`         | 存放系统文件，支持应用和软件安装。                                         |
 | **用户数据 `/home`** | ext4     | 60GB | `/home`     | 存放用户数据和配置文件，适用于日常使用。                                   |
 
-[Debian分区](https://www.yitu.xyz/2022/04/05/%E6%89%8B%E5%8A%A8%E5%88%86%E5%8C%BAdebian-boot%E3%80%81-swap%E3%80%81root%E3%80%81-home%E3%80%81-tmp%E3%80%81-srv%E3%80%81-var/)
-
 ## font
 
 - noto-fonts
@@ -33,6 +31,7 @@ Eg: 8g+128g
 - noto-fonts-extra
 - ttf-iosevkaterm-nerd
 - ttf-fira-code
+- otf-geist-mono-nerd
 
 配置参考：https://catcat.cc/post/2021-03-07
 
@@ -255,7 +254,7 @@ fcitx5 5.1.12-1
 fcitx5-gtk 5.1.3-1
 fcitx5-qt 5.1.9-6
 fcitx5-rime 5.1.10-1
-# md
+# media
 mpv 1:0.40.0-3
 imv 4.5.0-5
 # xx
@@ -263,7 +262,7 @@ unzip 6.0-22
 man-db 2.13.1-1
 openssh 10.0p1-3
 nodejs-lts-jod 22.16.0-1
-npm 11.4.1-1
+pnpm 11.4.1-1
 ```
 
 https://github.com/tldr-pages/tlrc

@@ -4,16 +4,6 @@
 
 [GIt Documentation](https://git-scm.com/doc)
 
-## git stash 暂存
-
-暂存不想 add 的修改
-
-```sh
-git stash # stash not add file
-git stash pop  # pop stash file
-git stash list
-git stash show -p
-```
 
 ## Branch
 

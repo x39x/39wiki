@@ -1,4 +1,4 @@
-# 托管服务
+# server
 
 bare repos
 

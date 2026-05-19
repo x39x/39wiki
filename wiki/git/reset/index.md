@@ -13,14 +13,13 @@
 >
 > 2. `--` 表示后面跟的是文件路径，而不是 commit 或分支名
 
-## 三种常见模式
+## 三种模式
 
 | 模式              | HEAD | 暂存区(index)    | 工作区(worktree) |
-| ---               | ---  | ---              | ---              |
+| ----------------- | ---- | ---------------- | ---------------- |
 | `--soft`          | 回退 | 不变             | 不变             |
 | `--mixed`（默认） | 回退 | 同步到目标commit | 不变             |
 | `--hard`          | 回退 | 同步到目标commit | 同步到目标commit |
-
 
 假设当前历史：
 
@@ -40,10 +39,8 @@ git reset --soft B
 变化：
 
 - HEAD：从 C 移到 B
-- 暂存区：保留 C 相对 B 的改动（不变，reset前index指向C，任然为此状态）
+- 暂存区：保留 C 相对 B 的改动（不变，reset前index指向C，仍为此状态）
 - 工作区：保持reset前的状态（不变）
-
-如果reset前有未staged的文件，会将此改动以及C相对B的改动都保留在工作区，并将index保持为B的状态（一般为干净的暂存区）
 
 效果：
 
@@ -118,11 +115,11 @@ git reset --hard <C的hash>
 
 git reflog 记录的是对 HEAD 引用的所有变动，而不仅仅是提交。它包括提交、分支切换、重置等操作。reflog 是本地的，并不会被推送到远程仓库，用于恢复误操作、找回丢失的提交等
 
-## 文件级 reset
+## 文件 reset
 
 可以只针对某些文件或路径来操作
 
-> `git reset <commit> -- <path>` 只会重置指定文件在暂存区的内容为目标 commit 的版本，不会移动 HEAD 或分支指针
+> `git reset <commit> -- <path>` 只会重置指定文件在暂存区的内容为目标 commit 的版本，不会改变HEAD与工作区文件
 
 例如：
 
@@ -130,12 +127,18 @@ git reflog 记录的是对 HEAD 引用的所有变动，而不仅仅是提交。
 git reset HEAD^ -- file.txt
 ```
 
-> 文件级 reset只会把 commit 版本同步到*暂存区*，无法改变HEAD里文件状态
->
-> 注意!!!：此时 HEAD不变，工作区内的是reset前的状态（不变），暂存区是HEAD^状态
+- 文件级 reset只能用 mixed 模式
+- 文件级 reset只会把 commit 版本同步到*暂存区*，无法改变HEAD与工作区文件状态
+- 注意!!!：此时 HEAD不变，工作区内的是reset前的状态（不变），暂存区是HEAD^状态
 
-以下写法是非法的（git 不允许 `--hard` 和 pathspec 同时用）
+### 非法写法
+
+`--hard` 与`--soft`只能用于整个工作区
 
 ```sh
 git reset --hard HEAD^ -- file.txt
+# Cannot do hard reset with paths
+
+git reset --soft HEAD^ -- file.txt
+# Cannot do soft reset with paths
 ```

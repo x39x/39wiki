@@ -5,6 +5,7 @@
 - [pure sh bible](https://github.com/dylanaraps/pure-sh-bible)
 - [MIT shell](https://missing.csail.mit.edu/2020/course-shell/)
 - [MIT shell tools](https://missing.csail.mit.edu/2020/shell-tools/)
+- [ bash 常见错误 ](http://mywiki.wooledge.org/BashPitfalls)
 
 ## 重定向
 

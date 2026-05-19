@@ -86,69 +86,6 @@ Defaults timestamp_timeout=0
 - 设置为 0：每次使用 sudo 都需要输入密码。
 - 设置为负数（如 -1）：授权后永久有效，直到用户注销或清除缓存。
 
-## 输入法
-
-### Package
-
-```
-fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5-rime
-```
-
-- fcitx5: 输入法基础框架主程序
-- fcitx5-gtk: GTK 程序的支持， 修复打字太快漏字的问题
-- fcitx5-qt: QT5 程序的支持， 修复打字太快漏字的问题
-- fcitx5-rime: RIME 输入法
-- fcitx5-configtool: 图形化配置工具（）
-
-### 配置
-
-参考：
-[fcitx](https://fcitx-im.org/wiki/Setup_Fcitx_5/zh-cn)
-[archwiki](https://wiki.archlinuxcn.org/wiki/Fcitx5)
-
-通常添加环境变量在 login shell 的配置文件里
-
-```sh
-# /etc/profile 兼容性最好, or .bash_profile/.profile 注意加载顺序
-XMODIFIERS=@im=fcitx
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-```
-
-### 主题
-
-[fcitx5-themes-candlelight](https://github.com/thep0y/fcitx5-themes-candlelight)
-
-```bash
-git clone https://github.com/thep0y/fcitx5-themes.git
-# 将想要使用的皮肤复制到该放的位置
-cd fcitx5-themes
-cp spring ~/.local/share/fcitx5/themes -r
-# 修改皮肤配置文件(若没有配置文件则自动创建)：
-```
-
-修改 `~/.config/fcitx5/conf/classicui.conf`
-
-```bash
-# 垂直候选列表
-Vertical Candidate List=False
-# 按屏幕 DPI 使用
-PerScreenDPI=True
-# Font (设置成你喜欢的字体)
-Font="Smartisan Compact CNS 13"
-# 主题(这里要改成你想要使用的主题名，主题名就在下面)
-Theme=spring
-```
-
-### 雾凇拼音
-
-[rime-ice](https://github.com/iDvel/rime-ice)
-
-```bash
-$HOME/.local/share/fcitx/rime # Linux
-$HOME/Library/Rime # Mac
-```
-
 ## Clash
 
 [wiki](https://wiki.metacubex.one/startup/service/)
@@ -178,19 +115,6 @@ setxkbmap -option ctrl:swapcaps
 setxkbmap -option ctrl:nocaps
 # swap alt and super
 setxkbmap -option altwin:swap_alt_win
-```
-
-## XFCE 桌面
-
-- [参考](https://community.aidlux.com/postDetail/439)
-
-## Font
-
-- [参考](https://copr.fedorainfracloud.org/coprs/aquacash5/nerd-fonts/)
-
-```bash
-sudo dnf copr enable aquacash5/nerd-fonts
-sudo dnf install fira-code-nerd-fonts
 ```
 
 ## Change Password

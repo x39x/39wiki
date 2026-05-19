@@ -2,14 +2,12 @@
 
 checkout 的两个核心功能
 
-### 1. 切换 HEAD
+### 1. 移动 HEAD
 
 ```sh
 git checkout main
 git checkout abc1234
 ```
-
-本质： 移动 HEAD
 
 ### 2. 用某版本覆盖文件
 
@@ -18,11 +16,9 @@ git checkout -- file
 git checkout abc1234 -- file
 ```
 
-本质：拿某个版本覆盖文件
-
 ## 恢复文件
 
-> `--` 表示后面的是文件路径，不是分支名
+> `--` 表示后面的是文件路径，不是分支名/commit
 
 > 如果不指定 commit：
 >
@@ -38,7 +34,7 @@ git checkout -- main.c
 效果：
 
 - 丢弃 `main.c` 在工作区的修改
-- 如果 `main.c` 已 `git add`，恢复为暂存区版本
+- 如果 `main.c` 已 `git add`，恢复为index版本
 - 否则恢复为 `HEAD` 版本
 
 ### 丢弃整个工作区修改
@@ -58,15 +54,16 @@ git checkout -- .
 > 恢复指定文件只会把 commit 版本同步到工作区/暂存区，无法改变HEAD里文件状态
 
 ```sh
-git checkout abc1234/HEAD -- main.c
+git checkout abc1234 -- main.c
 ```
 
 效果：
 
-- 将 `main.c` 恢复为 `abc1234`/`HEAD` 的版本
+- 将 `main.c` 恢复为 `abc1234` 的版本
 - 恢复后的内容会写入：
     - 工作区
     - 暂存区
+- 如果指定HEAD，`git checkout HEAD -- main.c`，则跳过index恢复为HEAD版本
 
 即文件处于 `git add` 状态，等待commit（因为这也是一次特殊的改动）
 
@@ -74,19 +71,19 @@ git checkout abc1234/HEAD -- main.c
 
 checkout 恢复文件时，本质是在“拷贝版本”
 
-```text
+```txt
 某个 commit/index ---> 工作区
 ```
 
 例如：
 
-```sh
+```bash
 git checkout HEAD -- main.c
 ```
 
 表示：
 
-```text
+```txt
 HEAD 中的 main.c → 覆盖当前文件
 ```
 
@@ -94,13 +91,13 @@ HEAD 中的 main.c → 覆盖当前文件
 
 切换到已有分支
 
-```sh
+```bash
 git checkout dev
 ```
 
 切回上一个分支
 
-```sh
+```bash
 git checkout -
 ```
 
@@ -108,13 +105,13 @@ git checkout -
 
 创建新分支并立即切换
 
-```sh
+```bash
 git checkout -b feature/login
 ```
 
 等价于：
 
-```sh
+```bash
 git branch feature/login
 git checkout feature/login
 # or
@@ -123,7 +120,7 @@ git switch -c feature/login
 
 基于某个提交创建分支
 
-```sh
+```bash
 git checkout -b fix abc1234
 ```
 
@@ -131,13 +128,13 @@ git checkout -b fix abc1234
 
 ### 创建本地跟踪分支
 
-```sh
+```bash
 git checkout -b main origin/main
 ```
 
 或者：
 
-```sh
+```bash
 git checkout --track origin/main
 ```
 
@@ -145,7 +142,7 @@ git checkout --track origin/main
 
 ### 切换到某个提交
 
-```sh
+```bash
 git checkout abc1234
 ```
 
@@ -157,6 +154,6 @@ git checkout abc1234
 
 ### 查看远程分支
 
-```sh
+```bash
 git checkout origin/main
 ```

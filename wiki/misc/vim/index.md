@@ -6,6 +6,10 @@
 
 ## TODO
 
+[editorconfig](https://editorconfig.org/)
+
+可以被多个编辑器读取
+
 ## Global CMD
 
 `:global` 可以简写为`:g`，可以对所有匹配到的执行操作
