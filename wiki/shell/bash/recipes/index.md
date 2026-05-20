@@ -1,10 +1,4 @@
-# 笔记｜技巧｜工具
-
-## bash zsh
-
-zsh把“命令行输入框”当成一个可编程对（ZLE） bash 只是 readline 的一层绑定
-
-zsh 在交互、插件开发等方面更出色，比bash更易用，但速度略慢于zsh
+# 常见用法
 
 ## replace character
 
@@ -54,16 +48,6 @@ curl https://clients3.google.com
 ```
 
 this URL is the best option to ping as it should work 24/7 without maintenance pause
-
-## 一些命令行工具收集
-
-- 计算代码行数
-
-https://github.com/XAMPPRocky/tokei
-
-- 画图
-
-gnuplot
 
 ## 进程替换 Process Substitution
 

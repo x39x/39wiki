@@ -38,9 +38,11 @@ latex 教程
 \setmonofont{Consolas NF}
 ```
 
-Latex: $la tech$
+中英文混排文档类型：
 
-中英文混排文档类型：`\documentclass[UTF8]{ctexart}`
+```tex
+\documentclass[UTF8]{ctexart}
+```
 
 ## 编译
 
@@ -261,3 +263,66 @@ Figure \ref{Fig.main} has two sub figures, fig. \ref{Fig.sub.1} is the travel de
 ## 画图 Tikz
 
 [LaTeX—Tikz 宏包入门使用教程](https://zhuanlan.zhihu.com/p/127155579)
+
+## MacOS配置latex 环境
+
+```sh
+brew install mactex-no-gui
+pdflatex xxx.tex
+xelatex xxx.tex
+```
+
+## VSCode 配置
+
+Plugin: LaTeX Workshop
+
+```json
+"latex-workshop.latex.tools": [
+        {
+                "name": "pdflatex",
+                "command": "pdflatex",
+                "args": [
+                        "-synctex=1",
+                        "-interaction=nonstopmode",
+                        "-file-line-error",
+                        "%DOC%"
+                ]
+        },
+        {
+                "name": "xelatex",
+                "command": "xelatex",
+                "args": [
+                        "-synctex=1",
+                        "-interaction=nonstopmode",
+                        "-file-line-error",
+                        "%DOC%"
+                ]
+        },
+        {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                        "%DOCFILE%"
+                ]
+        }
+
+],
+"latex-workshop.latex.build.forceRecipeUsage": false,
+"latex-workshop.view.pdf.viewer": "external",
+"latex-workshop.synctex.afterBuild.enabled": true,
+
+"latex-workshop.view.pdf.viewer": "external",
+"latex-workshop.view.pdf.external.viewer.command": "open",
+      "latex-workshop.view.pdf.external.viewer.args": [
+        "-a",
+        "preview",
+        "%PDF%"
+      ],
+"latex-workshop.view.pdf.external.synctex.command": "open",
+"latex-workshop.view.pdf.external.synctex.args": [
+    "-g",
+    "-a",
+    "preview",
+    "%PDF%",
+],
+```

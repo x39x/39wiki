@@ -69,7 +69,7 @@ async function walkDir(dirPath: string, relativePath: string, indentLevel = 0): 
 
         if (subDirs.length > 0 && !hasIndex) {
             // 是分类目录（没有 index.md）
-            lines.push(`${indent}- **${dir.name}**`);
+            lines.push(`${indent}- **${dir.name.replaceAll("-", " ")}**`);
             const subLines = await walkDir(
                 currentPath,
                 join(relativePath, dir.name),
@@ -105,7 +105,7 @@ async function generateStructure(): Promise<string> {
 
     for (const category of categoryDirs) {
         const categoryName = category.name;
-        lines.push(`## ${categoryName}\n`);
+        lines.push(`## ${categoryName.replaceAll("-", " ")}\n`);
 
         const categoryPath = join(rootDir, categoryName);
         const subLines = await walkDir(categoryPath, categoryName, 0);

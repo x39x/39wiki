@@ -1,15 +1,12 @@
-# sh/bash语法
+# 语法
 
-- [ 命令行的艺术 ](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 - [pure bash bible](https://github.com/dylanaraps/pure-bash-bible)
 - [pure sh bible](https://github.com/dylanaraps/pure-sh-bible)
-- [MIT shell](https://missing.csail.mit.edu/2020/course-shell/)
-- [MIT shell tools](https://missing.csail.mit.edu/2020/shell-tools/)
-- [ bash 常见错误 ](http://mywiki.wooledge.org/BashPitfalls)
+- [bash 常见错误](http://mywiki.wooledge.org/BashPitfalls)
 
 ## 重定向
 
-```sh
+```bash
 # '>' 将shell命令所得 stdout 去某文件
 ls > ls_out
 
@@ -198,29 +195,6 @@ bash: USERNAME: USERNAME is not set
 ```bash
 . "$HOME/.cargo/env"
 source "$HOME/.cargo/env"
-```
-
-### `[` 是`test`的别名
-
-`[`并不是shell语法，而是一条命令
-
-```sh
-which [
-/bin/[
-```
-
-判断一个条件如:
-
-```bash
-# -a:and, -o:or
-[ "$(uname)" = "Darwin" -a -f "/opt/homebrew/bin/brew" ]
-```
-
-不能执行命令为条件
-
-```bash
-# 命令执行失败/成功不能当作条件
-[ command -v nvim >/dev/null 2>&1 ]
 ```
 
 ### printf
