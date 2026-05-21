@@ -1,8 +1,6 @@
 # 语法
 
-- [pure bash bible](https://github.com/dylanaraps/pure-bash-bible)
 - [pure sh bible](https://github.com/dylanaraps/pure-sh-bible)
-- [bash 常见错误](http://mywiki.wooledge.org/BashPitfalls)
 
 ## 重定向
 
@@ -12,28 +10,6 @@ ls > ls_out
 
 # '<' 将文件内容 stdin 命令
 grep out < grep_in
-```
-
-## set and unset
-
-- set
-
-```bash
-#子命令失败，整个管道命令就失败，脚本终止执行。搭配 -e 使用
-set -o pipefail
-#脚本只要发生错误，就终止执行,set +e表示关闭-e选项，set -e表示重新打开-e选项
-set -o errexit = set -e
-#遇到不存在的变量报错，并停止执行
-set -o nounset = set -u
-#在运行结果之前，先输出执行的那一行命令行,首以 + 表示
-set -o xtrace   = set -x
-```
-
-- unset
-
-```bash
-# -f 　仅删除函数 -v 　仅删除变量。
-unset [-fv][变量或函数名称]
 ```
 
 ## 单引号双引号
@@ -89,36 +65,6 @@ Alice123
 echo "$NAME123"  # 这里会尝试查找变量 NAME123
 ```
 
-### 默认值：`${VAR:-default}`
-
-如果变量未设置或为空，可以使用默认值。
-
-```sh
-echo "${USERNAME:-guest}"
-```
-
-如果 `USERNAME` 未设置或为空，则输出 `guest`。
-
-### 变量替换：`${VAR/pattern/replacement}`
-
-替换变量值中的某个部分。
-
-```sh
-PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-echo "${PATH/bin/local/bin}"
-/usr/local/bin:/bin:/usr/sbin:/sbin
-```
-
-### 子字符串：`${VAR:offset:length}`
-
-提取变量值中的子字符串。
-
-```sh
-TEXT="Hello, World!"
-echo "${TEXT:7:5}"
-World
-```
-
 ### 获取变量长度：`${#VAR}`
 
 ```sh
@@ -160,9 +106,31 @@ echo "${FILE%%.*}"
 archive
 ```
 
+### 默认值：`${VAR:-default}`
+
+| Parameter      | What does it do?                                          |
+| -------------- | --------------------------------------------------------- |
+| ${VAR:-STRING} | If VAR is empty or unset, use STRING as its value.        |
+| ${VAR-STRING}  | If VAR is unset, use STRING as its value.                 |
+| ${VAR:=STRING} | If VAR is empty or unset, set the value of VAR to STRING. |
+| ${VAR=STRING}  | If VAR is unset, set the value of VAR to STRING.          |
+
+如果变量未设置或为空，可以使用默认值。
+
+```sh
+echo "${USERNAME:-guest}"
+```
+
+如果 `USERNAME` 未设置或为空，则输出 `guest`。
+
 ### 检查变量是否设置：`${VAR:+value}`
 
-如果变量设置了，就使用 `value`，否则不进行任何替换。
+| Parameter      | What does it do?                              |
+| -------------- | --------------------------------------------- |
+| ${VAR:+STRING} | If VAR is not empty, use STRING as its value. |
+| ${VAR+STRING}  | If VAR is set, use STRING as its value.       |
+
+如果变量不为空，就使用 `value`，否则不进行任何替换。
 
 ```sh
 USERNAME="Alice"
@@ -173,6 +141,11 @@ User is set
 如果 `USERNAME` 未设置，则不输出任何内容。
 
 ### 检查变量是否为空：`${VAR:?error message}`
+
+| Parameter      | What does it do?                    |
+| -------------- | ----------------------------------- |
+| ${VAR:?STRING} | Display an error if empty or unset. |
+| ${VAR?STRING}  | Display an error if unset.          |
 
 如果变量未设置或为空，则打印错误消息并退出。
 
@@ -188,16 +161,7 @@ Alice
 bash: USERNAME: USERNAME is not set
 ```
 
-## Tips
-
-### sh 中 `source` 是 `.` 的别名，为了兼容性一般建议后者
-
-```bash
-. "$HOME/.cargo/env"
-source "$HOME/.cargo/env"
-```
-
-### printf
+## printf
 
 不使用引号将变量传递给 printf，当变量值包含空格或其他特殊字符时，printf 命令会将其视为多个参数，而不是单个参数。
 
@@ -205,7 +169,7 @@ source "$HOME/.cargo/env"
 printf "$desktop_path"
 ```
 
-### 引号、反引号
+## 引号、反引号
 
 ```sh
 #  `` 中内容优先执行

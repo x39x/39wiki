@@ -79,12 +79,14 @@ layout: doc
 - [fish](/shell/fish/)
 - [快捷键](/shell/shourtcut/)
 - **bash**
+    - [bash 扩展](/shell/bash/bash/)
     - [笔记](/shell/bash/notes/)
     - [常见用法](/shell/bash/recipes/)
     - [语法](/shell/bash/sh/)
     - [基本工具](/shell/bash/toolbox/)
 - **cmd line tools**
     - [记录](/shell/cmd-line-tools/note/)
+    - [文件查看](/shell/cmd-line-tools/pager/)
     - [tar](/shell/cmd-line-tools/tar/)
     - [Tmux](/shell/cmd-line-tools/tmux/)
     - [zip](/shell/cmd-line-tools/zip/)
