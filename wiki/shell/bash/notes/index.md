@@ -28,3 +28,11 @@ which [
 # 命令执行失败/成功不能当作条件
 [ command -v nvim >/dev/null 2>&1 ]
 ```
+
+## -
+
+`-` 将stdin当作一个文件
+
+```bash
+tar -f - </dev/null
+```

@@ -78,6 +78,7 @@ layout: doc
 - [配置｜配置文件加载](/shell/config/)
 - [fish](/shell/fish/)
 - [快捷键](/shell/shourtcut/)
+- [stdin / stdout / stderr](/shell/std/)
 - **bash**
     - [bash 扩展](/shell/bash/bash/)
     - [笔记](/shell/bash/notes/)
