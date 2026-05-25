@@ -48,3 +48,22 @@ Private settings go here, and can be scoped to projects using If conditions.
 Each file can contain multiple fragments separated by --- lines. (This is only useful if the fragments have different If conditions).
 JSON is a subset of YAML, so you can use that syntax if you prefer.
 Changes should take effect immediately as you continue to edit code.
+
+## 刷题
+
+add to /usr/local/include/bits/stdc++.h on macos
+
+```cpp
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <string>
+#include <vector>
+using namespace std;
+```
+
+then #include <bits/stdc++.h>

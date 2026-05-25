@@ -36,6 +36,7 @@ git checkout -- main.c
 - 丢弃 `main.c` 在工作区的修改
 - 如果 `main.c` 已 `git add`，恢复为index版本
 - 否则恢复为 `HEAD` 版本
+- 如果指定HEAD，`git checkout HEAD -- main.c`，则跳过index恢复为HEAD版本
 
 ### 丢弃整个工作区修改
 
@@ -63,16 +64,13 @@ git checkout abc1234 -- main.c
 - 恢复后的内容会写入：
     - 工作区
     - 暂存区
-- 如果指定HEAD，`git checkout HEAD -- main.c`，则跳过index恢复为HEAD版本
-
-即文件处于 `git add` 状态，等待commit（因为这也是一次特殊的改动）
 
 ### 理解
 
 checkout 恢复文件时，本质是在“拷贝版本”
 
 ```txt
-某个 commit/index ---> 工作区
+某个 commit/index ---> 工作区/index
 ```
 
 例如：
