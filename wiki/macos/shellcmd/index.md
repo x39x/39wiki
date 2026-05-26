@@ -44,3 +44,9 @@ memory_pressure
 # 注意 clash tun
 curl [ipinfo.io/ip](https://ipinfo.io/ip)
 ```
+
+## 查看系统版本
+
+```bash
+sw_vers
+```
