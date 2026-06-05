@@ -22,23 +22,19 @@ turned on `Sync this Mac` and `Desktop & Documents Folders`
 
 ### 命令行配置
 
-同步配置文件
+- 同步配置文件
 
 ```sh
 git clone https://github.com/x39x/dotfiles ~/.dotfiles
 cd ~/.dotfiles && make
 ```
 
-常用工具
+- brew
+
+[参考](/macos/brew/#brew-bundle)
 
 ```py
-# 终端
-alacritty ghostty
-# 字体
-font-iosevka-term-nerd-font
-# base
-zoxide tree yazi fd ripgrep fzf
-bat difftastic neovim fish tldr tmux cmake
+brew bundle --file="~/.dotfile/Brewfile"
 ```
 
 编程环境配置
@@ -54,44 +50,20 @@ node@lts uv golang rust
 
 ## App
 
-### 常用
-
-```py
-raycast hammerspoon karabiner‐elements
-wechat qq steam google-chrome chatgpt
-mac-mouse-fix skim keycastr
-visual‐studio‐code
-```
-
-### 解压和压缩
-
-```py
-keka the‐unarchiver
-```
-
-### 多媒体
-
-```txt
-iina xld fliqlo
-```
-
-![sc](./sc.png)
-
-- **Fliqlo：** 简约风 Screen Saver
-- **IINA：** 一款开源的视频播放器
-- **XLD：** 音频转码小工具
+大部分通过 brew 安装
 
 ### Downie 4
 
 视频下载（bilibili&YouTube），付费:(
 
-## App Store
+### Bob
 
-### Bob：翻译软件，支持 OCR 翻译
-
+翻译软件，支持 OCR 翻译，App Store
 ![bob](./bob.png)
 
-### Craft Doc：笔记
+### Craft Doc
+
+笔记，App Store
 
 ![craft](./craft.png)
 
