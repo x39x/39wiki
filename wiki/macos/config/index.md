@@ -67,6 +67,10 @@ node@lts uv golang rust
 
 ![craft](./craft.png)
 
+### ublock origin lite
+
+Safari 广告屏蔽插件
+
 ## 系统设置
 
 ### Finder 设置
