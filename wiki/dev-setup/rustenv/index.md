@@ -4,8 +4,18 @@
 
 ```sh
 brew install rustup
-rustup-init # 选择手动配置环境变量
+rustup install stable # 安装基础工具链
 rustup component add rust-analyzer # rust lsp serve
+```
+
+### 配置环境变量
+
+通过homebrew安装不会自动link cargo等，需要自己处理
+
+[参考](https://rust-lang.github.io/rustup/installation/other.html#homebrew)
+
+```bash
+ADD_TO_PATH "$(brew --prefix rustup)/bin"
 ```
 
 ## curl 安装

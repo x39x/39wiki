@@ -1,13 +1,23 @@
 # Homebrew
 
-Homebrew 安装后需配置环境变量
+## install
+
+首先安装 cmd line tools
+
+```bash
+xcode-select --install
+```
+
+参考：https://brew.sh
+
+- 环境变量
 
 ```bash
 # add below to shell profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-## basic usage
+## 基本用法
 
 ```bash
 # 新增软件源
@@ -20,11 +30,10 @@ brew link python@3.9
 ## 切换国内镜像
 
 ```bash
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+export HOMEBREW_PIP_INDEX_URL="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 ```
 
 详细可参考[清华镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
@@ -36,24 +45,4 @@ export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 brew bundle dump --describe --force --file="~/.dotfile/Brewfile"
 # 批量安装软件
 brew bundle --file="~/.dotfile/Brewfile"
-```
-
-## Cask upgrade
-
-https://github.com/buo/homebrew-cask-upgrade
-
-可以使用brew升级cask
-
-### install
-
-```sh
-brew tap buo/cask-upgrade
-```
-
-### Usage
-
-```sh
-brew cu
-brew cu [CASK]
-brew cu -a -f
 ```
