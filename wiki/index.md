@@ -50,6 +50,7 @@ layout: doc
     - [改键](/linux/config/bindkey/)
     - [字体](/linux/config/font/)
     - [输入法](/linux/config/im/)
+    - [rfkill（无线硬件开关管理）](/linux/config/rfkill/)
     - [sway](/linux/config/sway/)
 - **install**
     - [arch 安装](/linux/install/arch/)
