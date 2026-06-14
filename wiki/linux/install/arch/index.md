@@ -23,18 +23,6 @@ Eg: 8g+128g
 | **根分区 `/`**       | ext4     | 40GB | `/`         | 存放系统文件，支持应用和软件安装。                                         |
 | **用户数据 `/home`** | ext4     | 60GB | `/home`     | 存放用户数据和配置文件，适用于日常使用。                                   |
 
-## font
-
-- noto-fonts
-- noto-fonts-cjk
-- noto-fonts-emoji
-- noto-fonts-extra
-- ttf-iosevkaterm-nerd
-- ttf-fira-code
-- otf-geist-mono-nerd
-
-配置参考：https://catcat.cc/post/2021-03-07
-
 ## Volum
 
 - https://wiki.archlinuxcn.org/wiki/WirePlumber
@@ -52,56 +40,6 @@ pipewire-pulse   # ALSA 兼容层
 
 https://github.com/Hummer12007/brightnessctl
 
-## proxy
-
-https://arch.icekylin.online/guide/rookie/transparent.html
-
-## sway
-
-- i3blocks
-- swaybg
-- swaylock
-- swayidle
-- tofi
-
-### Input
-
-- 查看设备名称。
-
-```sh
-swaymsg -t get_inputs
-
-# 输出类似这样：
-{
-    "identifier": "1133:16450:Logitech_USB_Receiver",
-    ...
-}
-```
-
-- 调试
-
-```sh
-xkbcli interactive-wayland
-```
-
-- 键盘
-
-    https://www.reddit.com/r/swaywm/comments/1b8hw3u/using_super_l_and_super_r_as_two_distinct/
-
-- 鼠标、触控板
-
-```sh
-# accel_profile: #设置加速模式，adaptive（动态加速）或 flat（恒定速度）
-# pointer_accel: #设置加速度，范围通常是 -1.0 到 1.0
-# natural_scroll enabled # 是否启用自然滚动方向
-# scroll_factor 1.5 # 滚轮滚动速度倍数（不一定所有设备都支持）
-input "1133:16450:Logitech_USB_Receiver" {
-    accel_profile "adaptive"
-    pointer_accel 0.3
-    natural_scroll enabled
-}
-```
-
 ## 剪切板
 
 - https://github.com/bugaevc/wl-clipboard
@@ -113,12 +51,6 @@ input "1133:16450:Logitech_USB_Receiver" {
     支持多媒体的 Wayland 剪贴板管理器
 
 配合 wtype
-
-## 改键
-
-- https://github.com/rvaiya/keyd
-- https://github.com/xremap/xremap
-- https://github.com/waycrate/swhkd
 
 ## 截图
 
@@ -157,14 +89,6 @@ wf-recorder -g "$(slurp)"
 ```
 
 - https://wiki.archlinuxcn.org/wiki/%E5%B1%8F%E5%B9%95%E6%8D%95%E8%8E%B7#Wayland
-
-## 按键模拟
-
-- https://github.com/ReimuNotMoe/ydotool
-
-    https://askubuntu.com/questions/1413829/how-can-i-install-and-use-the-latest-ydotool-keyboard-automation-tool-working-o
-
-- https://github.com/atx/wtype
 
 ## 多媒体
 

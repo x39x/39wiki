@@ -45,9 +45,12 @@ layout: doc
 - [恢复文件](/linux/recover-file/)
 - [Systemd 使用](/linux/systemd/)
 - **config**
-    - [新系统基本配置](/linux/config/base/)
+    - [新系统基本配置](/linux/config/1base/)
+    - [网络配置](/linux/config/2net/)
+    - [改键](/linux/config/bindkey/)
+    - [字体](/linux/config/font/)
     - [输入法](/linux/config/im/)
-    - [网络配置](/linux/config/net/)
+    - [sway](/linux/config/sway/)
 - **install**
     - [arch 安装](/linux/install/arch/)
     - [镜像烧录](/linux/install/base/)
