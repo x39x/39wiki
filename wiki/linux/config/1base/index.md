@@ -133,6 +133,33 @@ sudo passwd username
 timedatectl
 ```
 
+### NTP(Network Time Protocol)
+
+同步时间的服务，常见的有 `chronyd` `systemd-timesyncd`，无特殊需求推荐systemd，
+
+```bash
+sudo systemctl disable --now chronyd
+sudo dnf remove chrony
+sudo systemctl enable --now systemd-timesyncd
+sudo timedatectl set-ntp true
+```
+
+代理会导致 chronyd/systemd-timesyncd 同步异常（udp问题）， 需在规则中放行直连（udp+port123）
+
+也可以使用singbox内置的ntp服务
+
+```toml
+# /etc/systemd/timesyncd.conf
+[Time]
+NTP=2.arch.pool.ntp.org 3.arch.pool.ntp.org
+FallbackNTP=127.0.0.1
+```
+
+详细请参考
+
+- [ singbox ntp ](https://sing-box.sagernet.org/zh/configuration/ntp/)
+- [ systemd-timesyncd man page ](https://man.archlinux.org/man/timesyncd.conf.5)
+
 ### 设置系统时区
 
 如果需要更改系统时区，可以使用以下命令列出所有可用时区：
@@ -154,3 +181,13 @@ sudo timedatectl set-timezone Asia/Shanghai
 ```bash
 sudo hwclock --systohc
 ```
+
+rtc 里存UTC时间，系统时间会根据时差计算，可以避免一些切换时区的问题
+
+```bash
+timedatectl set-local-rtc 0
+```
+
+> RTC 就是主板上的时钟
+>
+> UTC(Coordinated Universal Time)协调世界时
