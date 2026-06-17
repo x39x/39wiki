@@ -1,5 +1,7 @@
 # arch 安装
 
+https://archlinuxstudio.github.io/ArchLinuxTutorial/
+
 ## boot
 
 https://wiki.archlinuxcn.org/wiki/Systemd-boot
@@ -16,177 +18,84 @@ https://dev.to/je12emy/setting-up-dual-boot-with-windows-and-arch-linux-using-sy
 
 Eg: 8g+128g
 
-| 分区                 | 文件系统 | 大小 | 挂载点      | 说明                                                                       |
-| -------------------- | -------- | ---- | ----------- | -------------------------------------------------------------------------- |
-| **EFI 分区**         | FAT32    | 1G   | `/boot/efi` | 存放 UEFI 引导文件，必须为 FAT32 格式。旧电脑可能会不支持,使用传统引导     |
-| **SWAP 分区**        | swap     | 10GB | `swap`      | 虚拟内存，支持内存溢出或休眠，一般为内存的1～2倍，支持休眠功能需不小于内存 |
-| **根分区 `/`**       | ext4     | 40GB | `/`         | 存放系统文件，支持应用和软件安装。                                         |
-| **用户数据 `/home`** | ext4     | 60GB | `/home`     | 存放用户数据和配置文件，适用于日常使用。                                   |
+| 分区                 | 文件系统 | 大小 | 挂载点      | 说明                                                                   |
+| -------------------- | -------- | ---- | ----------- | ---------------------------------------------------------------------- |
+| **EFI 分区**         | FAT32    | 1G   | `/boot/efi` | 存放 UEFI 引导文件，必须为 FAT32 格式。旧电脑可能会不支持,使用传统引导 |
+| **SWAP 分区**        | swap     | 10GB | `swap`      | 虚拟内存，内存溢出或休眠，一般为内存的1～2倍，支持休眠功能需不小于内存 |
+| **根分区 `/`**       | ext4     | 40GB | `/`         | 存放系统文件，支持应用和软件安装。                                     |
+| **用户数据 `/home`** | ext4     | 60GB | `/home`     | 存放用户数据和配置文件，适用于日常使用。                               |
 
-## Volum
+## 更改时区
 
-- https://wiki.archlinuxcn.org/wiki/WirePlumber
-- https://wiki.archlinuxcn.org/wiki/PipeWire
-- https://linuxgenie.net/install-pipewire-on-arch-linux/
+### 查看当前时间和时区设置
 
-```sh
-pipewire         # 音频、视频流和硬件处理的核心服务
-wireplumber      # PipeWire 的会话和策略管理器
-pipewire-alsa    # pulse  兼容层
-pipewire-pulse   # ALSA 兼容层
+运行以下命令查看当前的时间和相关配置：
+
+```bash
+timedatectl
 ```
 
-## 背光调节
+### NTP(Network Time Protocol)
 
-https://github.com/Hummer12007/brightnessctl
+同步时间的服务，常见的有 `chronyd` `systemd-timesyncd`，无特殊需求推荐systemd，
 
-## 剪切板
-
-- https://github.com/bugaevc/wl-clipboard
-
-    Wayland 的命令行复制/粘贴工具
-
-- https://github.com/sentriz/cliphist
-
-    支持多媒体的 Wayland 剪贴板管理器
-
-配合 wtype
-
-## 截图
-
-- https://github.com/emersion/slurp
-- https://git.sr.ht/~emersion/grim/
-- https://github.com/jtheoof/swappy
-
-```sh
-#  对整个屏幕截屏
-grim 截屏.png
-# 在 Sway 中对当前窗口截屏
-swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - 截屏.png
-# 在 Hyprland 中对当前窗口截屏
-hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - 截屏.png
-# 对选区截屏
-slurp | grim -g - 截屏.png
-# 对选区截屏并使用 wl-clipboard包 将结果存入剪贴板
-slurp | grim -g - - | wl-copy
-
-# swappy 编辑图片
-grim -g "$(slurp)" - | swappy -f -
-swappy -f "~/Desktop/my-gnome-saved-file.png"
-# Grab a swappshot from a specific window under Sway, using swaymsg and jq:
-grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
+```bash
+sudo systemctl disable --now chronyd
+sudo dnf remove chrony
+sudo systemctl enable --now systemd-timesyncd
+sudo timedatectl set-ntp true
 ```
 
-## 屏幕录制
+代理会导致 chronyd/systemd-timesyncd 同步异常（udp问题）， 需在规则中放行直连（udp+port123）
 
-- https://github.com/ammen99/wf-recorder
+也可以使用singbox内置的ntp服务
 
-```sh
-# 对整个屏幕录屏
-wf-recorder -f recording.mp4
-# 对选区录屏
-wf-recorder -g "$(slurp)"
+```toml
+# /etc/systemd/timesyncd.conf
+[Time]
+NTP=2.arch.pool.ntp.org 3.arch.pool.ntp.org
+FallbackNTP=127.0.0.1
 ```
 
-- https://wiki.archlinuxcn.org/wiki/%E5%B1%8F%E5%B9%95%E6%8D%95%E8%8E%B7#Wayland
+详细请参考
 
-## 多媒体
+- [ singbox ntp ](https://sing-box.sagernet.org/zh/configuration/ntp/)
+- [ systemd-timesyncd man page ](https://man.archlinux.org/man/timesyncd.conf.5)
 
-### 图片查看
+### 设置系统时区
 
-- https://sr.ht/~exec64/imv/
-- https://github.com/artemsen/swayimg
+如果需要更改系统时区，可以使用以下命令列出所有可用时区：
 
-### 音乐播放
-
-- https://wiki.archlinux.org/title/Music_Player_Daemon
-
-### 视频播放
-
-- https://github.com/mpv-player/mpv
-
-## 防火墙
-
-- https://wiki.archlinux.org/title/Nftables
-
-- https://wiki.archlinux.org/title/Firewalld
-
-- https://wiki.archlinux.org/title/Uncomplicated_Firewall
-
-## TODO
-
-- https://github.com/elkowar/eww
-
-    桌面小组件
-
-- https://github.com/emersion/mako
-- https://github.com/dunst-project/dunst
-
-    通知
-
-- https://github.com/coffeeispower/woomer
-
-    Zoomer application for Wayland inspired by tsoding's boomer
-
-- https://github.com/hyprwm/hyprpicker
-
-    Wayland color picker
-
-- https://gitlab.com/chinstrap/gammastep
-
-    自动调节屏幕色温
-
----
-
-## pack
-
-```sh
-# sys
-linux 6.15.2.arch1-1
-linux-firmware 20250508.788aadc8-2
-base 3-2
-base-devel 1-2
-# hw
-intel-ucode 20250512-1
-vulkan-intel 1:25.1.3-3
-
-# ctr
-iwd 3.9-1
-brightnessctl 0.5.1-3
-# yay
-archlinuxcn-keyring 20250531-1
-yay 12.5.0-1
-###
-daed 1.0.0-1
-# wm
-sway 1:1.11-1
-swaybg 1.2.1-1
-swayidle 1.8.0-2
-swaylock 1.8.2-1
-i3blocks 1.5-4
-tofi 0.9.1-3
-mako 1.10.0-1
-# uf
-swappy 1.5.1-2
-slurp 1.5.0-1
-grim 1.4.1-3
-wl-clipboard 1:2.2.1-2
-cliphist 1:0.6.1-1
-wtype 0.4-2
-# im
-fcitx5 5.1.12-1
-fcitx5-gtk 5.1.3-1
-fcitx5-qt 5.1.9-6
-fcitx5-rime 5.1.10-1
-# media
-mpv 1:0.40.0-3
-imv 4.5.0-5
-# xx
-unzip 6.0-22
-man-db 2.13.1-1
-openssh 10.0p1-3
-nodejs-lts-jod 22.16.0-1
-pnpm 11.4.1-1
+```bash
+timedatectl list-timezones
 ```
 
-https://github.com/tldr-pages/tlrc
+找到所需的时区后，设置它，例如将时区更改为 `Asia/Shanghai`：
+
+```bash
+sudo timedatectl set-timezone Asia/Shanghai
+```
+
+### 硬件时钟（RTC）同步
+
+更改系统时间后，系统会自动同步硬件时钟。如果没有同步，可以手动运行以下命令：
+
+```bash
+sudo hwclock --systohc
+```
+
+rtc 里存UTC时间，系统时间会根据时差计算，可以避免一些切换时区的问题
+
+```bash
+timedatectl set-local-rtc 0
+```
+
+> RTC 就是主板上的时钟
+>
+> UTC(Coordinated Universal Time)协调世界时
+
+## Change Password
+
+```bash
+sudo passwd username
+```

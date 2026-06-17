@@ -1,193 +1,167 @@
 # 新系统基本配置
 
-常见系统都预装 sudo ，Debian等默认无 `sudo`
+## audio
 
-## 安装 `sudo` 并添加用户
+- https://wiki.archlinuxcn.org/wiki/WirePlumber
+- https://wiki.archlinuxcn.org/wiki/PipeWire
+- https://linuxgenie.net/install-pipewire-on-arch-linux/
 
-> 可以使用 systemd run0
-> 需要安装 [polkit](https://archlinux.org/packages/?name=polkit)
-> 参考 https://wiki.archlinuxcn.org/wiki/Polkit
-
-```bash
-su --login (or su -简写形式) # 需要root密码
-apt update
-apt install sudo
+```sh
+pipewire         # 音频、视频流和硬件处理的核心服务
+wireplumber      # PipeWire 的会话和策略管理器
+pipewire-alsa    # pulse  兼容层
+pipewire-pulse   # ALSA 兼容层
 ```
 
-将用户添加到 `sudo` 组， 假设用户名为 `user1`：
+## 背光调节
 
-```bash
-su - # 需要root密码
-usermod -aG sudo user1
+https://github.com/Hummer12007/brightnessctl
+
+## 剪切板
+
+- https://github.com/bugaevc/wl-clipboard
+
+    Wayland 的命令行复制/粘贴工具
+
+- https://github.com/sentriz/cliphist
+
+    支持多媒体的 Wayland 剪贴板管理器
+
+配合 wtype
+
+## 截图
+
+- https://github.com/emersion/slurp
+- https://git.sr.ht/~emersion/grim/
+- https://github.com/jtheoof/swappy
+
+```sh
+#  对整个屏幕截屏
+grim 截屏.png
+# 在 Sway 中对当前窗口截屏
+swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - 截屏.png
+# 在 Hyprland 中对当前窗口截屏
+hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - 截屏.png
+# 对选区截屏
+slurp | grim -g - 截屏.png
+# 对选区截屏并使用 wl-clipboard包 将结果存入剪贴板
+slurp | grim -g - - | wl-copy
+
+# swappy 编辑图片
+grim -g "$(slurp)" - | swappy -f -
+swappy -f "~/Desktop/my-gnome-saved-file.png"
+# Grab a swappshot from a specific window under Sway, using swaymsg and jq:
+grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)" - | swappy -f -
 ```
 
-### 验证配置
+## 屏幕录制
 
-检查 `/etc/sudoers` 文件中是否有以下内容：
+- https://github.com/ammen99/wf-recorder
 
-```
-%sudo   ALL=(ALL:ALL) ALL
-```
-
-如果没有，可以使用 `visudo` 编辑该文件，添加上述内容。
-
-需要注销并重新登录以应用更改, 可以通过以下命令验证是否具有 `sudo` 权限：
-
-```bash
-# 输出为 `root`，说明配置成功。
-sudo whoami
+```sh
+# 对整个屏幕录屏
+wf-recorder -f recording.mp4
+# 对选区录屏
+wf-recorder -g "$(slurp)"
 ```
 
-### 使用 root 用户
+- https://wiki.archlinuxcn.org/wiki/%E5%B1%8F%E5%B9%95%E6%8D%95%E8%8E%B7#Wayland
 
-```bash
-sudo -i
-sudo su
-exit
+## 多媒体
+
+### 图片查看
+
+- https://sr.ht/~exec64/imv/
+- https://github.com/artemsen/swayimg
+
+### 音乐播放
+
+- https://wiki.archlinux.org/title/Music_Player_Daemon
+
+### 视频播放
+
+- https://github.com/mpv-player/mpv
+
+## 防火墙
+
+- https://wiki.archlinux.org/title/Nftables
+
+- https://wiki.archlinux.org/title/Firewalld
+
+- https://wiki.archlinux.org/title/Uncomplicated_Firewall
+
+## TODO
+
+- https://github.com/elkowar/eww
+
+    桌面小组件
+
+- https://github.com/emersion/mako
+- https://github.com/dunst-project/dunst
+
+    通知
+
+- https://github.com/coffeeispower/woomer
+
+    Zoomer application for Wayland inspired by tsoding's boomer
+
+- https://github.com/hyprwm/hyprpicker
+
+    Wayland color picker
+
+- https://gitlab.com/chinstrap/gammastep
+
+    自动调节屏幕色温
+
+---
+
+## arch pack
+
+```sh
+# sys
+linux 6.15.2.arch1-1
+linux-firmware 20250508.788aadc8-2
+base 3-2
+base-devel 1-2
+# hw
+intel-ucode 20250512-1
+vulkan-intel 1:25.1.3-3
+
+# ctr
+iwd 3.9-1
+brightnessctl 0.5.1-3
+# yay
+archlinuxcn-keyring 20250531-1
+yay 12.5.0-1
+###
+daed 1.0.0-1
+# wm
+sway 1:1.11-1
+swaybg 1.2.1-1
+swayidle 1.8.0-2
+swaylock 1.8.2-1
+i3blocks 1.5-4
+tofi 0.9.1-3
+mako 1.10.0-1
+# uf
+swappy 1.5.1-2
+slurp 1.5.0-1
+grim 1.4.1-3
+wl-clipboard 1:2.2.1-2
+cliphist 1:0.6.1-1
+wtype 0.4-2
+# im
+fcitx5 5.1.12-1
+fcitx5-gtk 5.1.3-1
+fcitx5-qt 5.1.9-6
+fcitx5-rime 5.1.10-1
+# media
+mpv 1:0.40.0-3
+imv 4.5.0-5
+# xx
+unzip 6.0-22
+man-db 2.13.1-1
+openssh 10.0p1-3
+nodejs-lts-jod 22.16.0-1
+pnpm 11.4.1-1
 ```
-
-## 其他
-
-如果只想授予某些特定命令的权限，可以通过 visudo 为用户设置更精细的规则,
-假设用户名为 `user1`：
-
-```bash
-# sudo command;sudo apt update 可以不需要密码执行
-user1 ALL=(ALL) NOPASSWD: /path/to/command
-user1 ALL=(ALL) NOPASSWD: /usr/bin/apt update
-```
-
-- 第一个 ALL： 适用于所有主机。如果在多主机环境下使用 sudoers 文件，可以指定特定的主机
-
-- 第二个 ALL：允许以任何用户身份运行命令。默认是 root，但也可以指定为其他用户（如user1）
-
-- NOPASSWD：表示执行该命令时，不需要输入用户密码。
-
-> 在大型公司或云服务提供商的数据中心，可能有成百上千台服务器，分布在不同的物理位置上。这些服务器通常需要统一的管理和配置，而 sudoers 文件可以帮助管理员在不同的机器上以一致的方式管理用户权限。
->
-> 例如，可能有多台 Web 服务器、数据库服务器、缓存服务器等，而管理员希望所有这些服务器上的某些用户能够执行相同的管理命令（例如备份、更新等），并且以相同的权限执行。
-
-### 清除当前用户的 sudo 缓存，
-
-下一次使用 sudo 将要求再次输入密码，适合完成任务后立即撤销 sudo 权限。
-
-```bash
-sudo -k
-```
-
-### 调整 sudo 的超时时间，
-
-修改 sudo 配置 `/etc/sudoers`
-
-```bash
-Defaults timestamp_timeout=0
-```
-
-- 设置为 0：每次使用 sudo 都需要输入密码。
-- 设置为负数（如 -1）：授权后永久有效，直到用户注销或清除缓存。
-
-## Clash
-
-[wiki](https://wiki.metacubex.one/startup/service/)
-[blog](https://liyp.cc/archives/1696683830494)
-
-## Key
-
-### Xmodmap
-
-写一个配置文件.Xmodmap放在 `~`下，使用`xmodmap ~/.Xmodmap` 命令加载
-
-```bash
-# set Caps_Lock as Control
-remove Lock      = Caps_Lock
-keysym Caps_Lock = Control_L
-add    Control   = Control_L
-```
-
-### setxkbmap
-
-添加到bash_profile
-
-```bash
-# swap left Control and Caps_Lock
-setxkbmap -option ctrl:swapcaps
-# set Caps_Lock as Control
-setxkbmap -option ctrl:nocaps
-# swap alt and super
-setxkbmap -option altwin:swap_alt_win
-```
-
-## Change Password
-
-```bash
-sudo passwd username
-```
-
-## 更改时区
-
-### 查看当前时间和时区设置
-
-运行以下命令查看当前的时间和相关配置：
-
-```bash
-timedatectl
-```
-
-### NTP(Network Time Protocol)
-
-同步时间的服务，常见的有 `chronyd` `systemd-timesyncd`，无特殊需求推荐systemd，
-
-```bash
-sudo systemctl disable --now chronyd
-sudo dnf remove chrony
-sudo systemctl enable --now systemd-timesyncd
-sudo timedatectl set-ntp true
-```
-
-代理会导致 chronyd/systemd-timesyncd 同步异常（udp问题）， 需在规则中放行直连（udp+port123）
-
-也可以使用singbox内置的ntp服务
-
-```toml
-# /etc/systemd/timesyncd.conf
-[Time]
-NTP=2.arch.pool.ntp.org 3.arch.pool.ntp.org
-FallbackNTP=127.0.0.1
-```
-
-详细请参考
-
-- [ singbox ntp ](https://sing-box.sagernet.org/zh/configuration/ntp/)
-- [ systemd-timesyncd man page ](https://man.archlinux.org/man/timesyncd.conf.5)
-
-### 设置系统时区
-
-如果需要更改系统时区，可以使用以下命令列出所有可用时区：
-
-```bash
-timedatectl list-timezones
-```
-
-找到所需的时区后，设置它，例如将时区更改为 `Asia/Shanghai`：
-
-```bash
-sudo timedatectl set-timezone Asia/Shanghai
-```
-
-### 硬件时钟（RTC）同步
-
-更改系统时间后，系统会自动同步硬件时钟。如果没有同步，可以手动运行以下命令：
-
-```bash
-sudo hwclock --systohc
-```
-
-rtc 里存UTC时间，系统时间会根据时差计算，可以避免一些切换时区的问题
-
-```bash
-timedatectl set-local-rtc 0
-```
-
-> RTC 就是主板上的时钟
->
-> UTC(Coordinated Universal Time)协调世界时

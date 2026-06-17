@@ -50,7 +50,9 @@ layout: doc
     - [改键](/linux/config/bindkey/)
     - [字体](/linux/config/font/)
     - [输入法](/linux/config/im/)
+    - [proxy](/linux/config/proxy/)
     - [rfkill（无线硬件开关管理）](/linux/config/rfkill/)
+    - [sudo](/linux/config/sudo/)
     - [sway](/linux/config/sway/)
 - **install**
     - [arch 安装](/linux/install/arch/)
@@ -77,6 +79,10 @@ layout: doc
 - [纸媒](/misc/news/)
 - [proxy](/misc/proxy/)
 - [静态网页生成](/misc/staticweb/)
+
+## net
+
+- [net](/net/tips/)
 
 ## shell
 
