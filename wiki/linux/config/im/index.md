@@ -32,8 +32,6 @@ cp spring ~/.local/share/fcitx5/themes -r
 
 ## 基本配置
 
-> 不使用图形界面配置
-
 参考：
 
 - [fcitx](https://fcitx-im.org/wiki/Setup_Fcitx_5/zh-cn)

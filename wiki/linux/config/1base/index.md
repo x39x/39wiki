@@ -23,6 +23,10 @@ https://github.com/Hummer12007/brightnessctl
 
     Wayland 的命令行复制/粘贴工具
 
+- https://github.com/bugaevc/wl-clipboard
+
+    Wayland 剪贴板
+
 - https://github.com/sentriz/cliphist
 
     支持多媒体的 Wayland 剪贴板管理器
