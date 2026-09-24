@@ -77,11 +77,11 @@ layout: doc
 - [Makefile 简明教程](/misc/makefile/)
 - [流媒体编解码、格式](/misc/media/)
 - [纸媒](/misc/news/)
-- [proxy](/misc/proxy/)
 - [静态网页生成](/misc/staticweb/)
 
 ## net
 
+- [proxy](/net/proxy/)
 - [net](/net/tips/)
 
 ## shell

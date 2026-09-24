@@ -16,3 +16,7 @@ fake-ip 作用是让 tun 模式的代理也能像传统 HTTP/SOCKS5 代理一样
 好处就是提高 tun 模式代理的效率，并且补全了原本 tun 模式相比传统代理反而不支持的一些功能。
 
 缺点是假 ip 会进入系统 dns 缓存，如果关掉代理之后可能会上不了网，这时候需要清除一下系统的 dns 缓存。
+
+---
+
+singbox 裸核需要手动去网络设置配置代理(socks/http/https)，也可将set_system_proxy设为true，由singbox自动处理
