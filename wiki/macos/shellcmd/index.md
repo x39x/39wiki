@@ -50,3 +50,18 @@ curl [ipinfo.io/ip](https://ipinfo.io/ip)
 ```bash
 sw_vers
 ```
+
+## 重制dns
+
+```bash
+sudo dscacheutil -flushcache
+sudo killall -HUP mDNSResponder
+```
+
+## 设置wifi dns服务器
+
+```bash
+sudo networksetup -setdnsservers Wi-Fi 172.18.0.2
+```
+
+将 wifi 网络的dns指向 `172.18.0.2`
