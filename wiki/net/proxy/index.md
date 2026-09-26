@@ -70,6 +70,6 @@ singbox 可将set_system_proxy设为true，由singbox自动设置系统代理
 
 这样dns解析交给了server，可以获得合适的cdn节点ip
 
+#### tips
 
-
-获取fakeip，命中直连规则，这时获取ip依然会遵循dns rules，会跳过fakeip
+需要直连的网站如`qq.com`，获取fakeip后，还原成域名命中直连规则，这时需要获取真正的ip，依然会遵循dns rules，但会跳过fakeip
