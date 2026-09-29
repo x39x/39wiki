@@ -73,3 +73,21 @@ singbox 可将set_system_proxy设为true，由singbox自动设置系统代理
 #### tips
 
 需要直连的网站如`qq.com`，获取fakeip后，还原成域名命中直连规则，这时需要获取真正的ip，依然会遵循dns rules，但会跳过fakeip
+
+#### 局域网 dns
+
+```jsonc
+"inbounds": [
+    //........
+    {
+        "tag": "dns-in",
+        "type": "direct",
+        "listen": "::",
+        "listen_port": 53,
+        "network": "udp"
+    }
+    //........
+]
+```
+
+监听局域网 dns 请求需要添加以上入站，[参考](https://github.com/SagerNet/sing-box/issues/2729)

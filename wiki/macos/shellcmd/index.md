@@ -42,7 +42,16 @@ memory_pressure
 
 ```sh
 # 注意 clash tun
-curl [ipinfo.io/ip](https://ipinfo.io/ip)
+curl https://ipinfo.io/ip
+curl -4 https://icanhazip.com
+curl -6 https://icanhazip.com
+```
+
+## 获取自己局域网ip
+
+```sh
+ipconfig getifaddr en0 #通常 en0 是 Wi-Fi
+ifconfig | grep 'inet'
 ```
 
 ## 查看系统版本
@@ -51,7 +60,7 @@ curl [ipinfo.io/ip](https://ipinfo.io/ip)
 sw_vers
 ```
 
-## 重制dns
+## 重置dns
 
 ```bash
 sudo dscacheutil -flushcache
