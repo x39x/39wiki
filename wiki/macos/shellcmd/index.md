@@ -47,6 +47,13 @@ curl -4 https://icanhazip.com
 curl -6 https://icanhazip.com
 ```
 
+## 关闭长按字母显示上标
+
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write -g ApplePressAndHoldEnabled -bool true # 恢复
+```
+
 ## 获取自己局域网ip
 
 ```sh
