@@ -88,7 +88,7 @@ fedora:rawhide
 Homebrew 安装：
 
 ```bash
-brew install --cask container
+brew install  container
 ```
 
 启动后台服务：
