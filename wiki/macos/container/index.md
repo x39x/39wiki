@@ -93,8 +93,23 @@ brew install  container
 
 启动后台服务：
 
+使用 `brew services`管理
+
 ```bash
-container system start
+brew services start container
+```
+
+When starting container with `brew services`, no kernel is installed
+automatically. Install the recommended kernel before running containers:
+
+```bash
+container system kernel set --recommended
+```
+
+if you don't need a background service you can just run:
+
+```bash
+container system start --disable-kernel-install
 ```
 
 查看状态：
