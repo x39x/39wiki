@@ -55,19 +55,18 @@ scp -P 22 -r -i ~/id_rsa Demo username@192.168.8.8:/home/user1/
 
 ### 连接
 
-````bash
+```bash
 # 使用指定端口连接
 sftp -P 2222 user@hostname
 # 上传目录
 sftp -r /local/directory user@hostname:/remote/directory
 # 启用压缩传输文件
-```bash
 sftp -C user@hostname
 # 指定私钥文件进行身份验证
 sftp -i ~/.ssh/my_key user@hostname
 # 通过中间主机跳跃连接
 sftp -J jump_host user@hostname
-````
+```
 
 ### 基本用法
 
