@@ -1,6 +1,7 @@
-import { defineConfig } from "vitepress";
 import fs from "fs";
 import path from "path";
+
+import { defineConfig } from "vitepress";
 
 function readTitleFromIndex(indexPath: string, fallback: string): string {
     try {
@@ -13,11 +14,7 @@ function readTitleFromIndex(indexPath: string, fallback: string): string {
     return fallback.replace(/[-_]/g, " ");
 }
 
-function sortEntriesByType(
-    entries: fs.Dirent[],
-    basePath: string,
-    baseDir: string,
-) {
+function sortEntriesByType(entries: fs.Dirent[], basePath: string, baseDir: string) {
     const withIndex: fs.Dirent[] = [];
     const withoutIndex: fs.Dirent[] = [];
 
@@ -64,10 +61,7 @@ function genSideBarItems(baseDir: string, basePath: string): any[] {
 
         if (subDirs.length > 0) {
             // 有子目录 -> 递归生成子级 items
-            const subItems = genSideBarItems(
-                path.join(baseDir, entry.name),
-                basePath,
-            );
+            const subItems = genSideBarItems(path.join(baseDir, entry.name), basePath);
 
             const node: any = { text: title, items: subItems };
 
@@ -90,7 +84,8 @@ function genSideBarItems(baseDir: string, basePath: string): any[] {
 }
 
 function genSideBar() {
-    const basePath = path.resolve(__dirname, "..", "wiki");
+    // const basePath = path.resolve(__dirname, "..", "wiki");
+    const basePath = path.resolve(import.meta.dirname, "..", "wiki");
     const excludeDirs = new Set(["public"]);
 
     const dirs = fs
@@ -114,7 +109,7 @@ export default defineConfig({
     lastUpdated: true,
     markdown: {
         image: {
-            lazyLoading: true,
+            lazyLoad: true,
         },
         math: true,
     },
