@@ -68,3 +68,4 @@ fake-ip 模式下 tun 接管 dns 解析后返回一个 fake ip ，拿到 fake ip
 - [内核字段介绍](https://core-tutorial.argsment.com/zh)
 - [Meta 完整配置示例](https://github.com/MetaCubeX/mihomo/blob/Meta/docs/config.yaml)
 - [Surge 配置](https://blog.skk.moe/post/i-have-my-unique-surge-setup/)
+- [Nginx](https://www.zhihu.com/question/21483073/answer/2252761291)

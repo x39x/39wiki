@@ -1,5 +1,7 @@
 # 配置文件
 
+[popular git config options](https://jvns.ca/blog/2024/02/16/popular-git-config-options/)
+
 Git 相关配置保存在 ~/.gitconfig 或 ~/.config/git/config 中
 
 - `git config --list` 查看所有配置
