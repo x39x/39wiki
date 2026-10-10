@@ -1,14 +1,10 @@
-# Mac 配置 Scheme 环境
+# Scheme
 
-大多数 Scheme 教程都会推荐 Mit Scheme 作为开发环境，但在 Apple silicon 的 Mac 通过 Homebrew 安装mit-scheme时会得到如下错误
+## mit scheme
 
 ```bash
 brew install mit-scheme
-mit-scheme: The x86_64 architecture is required for this software.
-Error: mit-scheme: Unsatisfied requirements failed this build.
 ```
-
-因为 mit-scheme 只能在 Intel 的机型运行，以下推荐两种替代方案
 
 ## ChezScheme
 

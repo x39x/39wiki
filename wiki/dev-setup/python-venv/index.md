@@ -1,6 +1,6 @@
-# Python 虚拟环境及工具链
+# Python
 
-## Python Version Control: uv
+## uv
 
 基本用法
 
@@ -26,7 +26,7 @@ uvx ruff format
 uvx ruff check
 ```
 
-会把ruff下载到项目目录下的 `.ruff_cache` 里，可以不用安装就执行
+会把ruff下载到项目目录下的 `.ruff_cache` 里，可以不安装就执行
 
 2. 安装到项目里
 

@@ -1,4 +1,4 @@
-# Nodejs 环境| 版本
+# Node
 
 Node.js 有两个主要的发布版本：
 
@@ -11,14 +11,9 @@ brew 默认是 Current ，推荐使用 LTS ，一般是 Current 版本号减一�
 brew install node@LTS
 brew link node@LTS
 brew unlink node@20
-corepack enable
 ```
 
-从 Node.js v16.9.0 开始，Corepack 已经预装在 Node.js 发行版中。启用后会确保 Corepack 能够拦截对应的包管理器命令（npm, Yarn, pnpm），并且如果必要，会自动下载指定版本的这些包管理器。
-
-> Corepack 在 Node@25 被移除，需要手动安装
-
-## pnpm 支持全局 Node.js 版本管理
+## 全局 Node
 
 ### 查看版本
 
@@ -33,7 +28,7 @@ pnpm env remove --global 14.0.0
 
 安装位置在：`~/.local/share/pnpm/nodejs/ ($PNPM_HOME/nodejs/)`
 
-## 项目级指定 Node 版本（非全局切换）
+## 项目 Node
 
 - 项目目录下创建 `.npmrc` 文件：
 

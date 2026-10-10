@@ -1,4 +1,4 @@
-# Server | 服务端配置
+# Server
 
 ssh server 是指 sshd ，运行在你要连接的机器上，一般是云端服务器
 

@@ -18,8 +18,3 @@
 - https://github.com/yuesong-feng/30dayMakeCppServer/tree/main
 
 - https://zhuanlan.zhihu.com/p/688090551
-
-## web
-
-- https://wangdoc.com
-- https://doc.cherrychat.org

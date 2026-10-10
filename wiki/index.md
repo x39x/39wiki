@@ -7,12 +7,12 @@ layout: doc
 
 ## dev setup
 
-- [Mac 配置 Scheme 环境](/dev-setup/apple_scheme/)
 - [C/C++](/dev-setup/cpp/)
 - [Java jdk](/dev-setup/java/)
-- [Nodejs 环境| 版本](/dev-setup/node_env/)
-- [Python 虚拟环境及工具链](/dev-setup/python-venv/)
-- [Rust 安装与环境变量配置](/dev-setup/rustenv/)
+- [Node](/dev-setup/node_env/)
+- [Python](/dev-setup/python-venv/)
+- [Rust](/dev-setup/rustenv/)
+- [Scheme](/dev-setup/scheme/)
 
 ## git
 
@@ -71,14 +71,14 @@ layout: doc
 
 ## misc
 
+- [音频](/misc/audio/)
 - [前端](/misc/frontend/)
-- [图形、渲染](/misc/graph/)
+- [渲染](/misc/graph/)
 - [Latex](/misc/latex/)
-- [Makefile 简明教程](/misc/makefile/)
-- [流媒体编解码、格式](/misc/media/)
+- [Makefile](/misc/makefile/)
 - [纸媒](/misc/news/)
-- [静态网页生成](/misc/staticweb/)
 - [Todo](/misc/todo/)
+- [视频](/misc/video/)
 
 ## net
 
@@ -91,26 +91,26 @@ layout: doc
 - [fish](/shell/fish/)
 - [快捷键](/shell/shourtcut/)
 - [stdin / stdout / stderr](/shell/std/)
-- **bash**
-    - [bash 扩展](/shell/bash/bash/)
-    - [笔记](/shell/bash/notes/)
-    - [常见用法](/shell/bash/recipes/)
-    - [语法](/shell/bash/sh/)
-    - [基本工具](/shell/bash/toolbox/)
 - **cmd line tools**
     - [记录](/shell/cmd-line-tools/note/)
     - [文件查看](/shell/cmd-line-tools/pager/)
     - [tar](/shell/cmd-line-tools/tar/)
     - [Tmux](/shell/cmd-line-tools/tmux/)
     - [zip](/shell/cmd-line-tools/zip/)
+- **grammar**
+    - [bash 扩展](/shell/grammar/bash/)
+    - [笔记](/shell/grammar/notes/)
+    - [常见用法](/shell/grammar/recipes/)
+    - [语法](/shell/grammar/sh/)
+    - [基本工具](/shell/grammar/toolbox/)
 
 ## ssh
 
-- [Client | 客户端配置](/ssh/client/)
-- [常见问题解决及其他用法](/ssh/expansion/)
-- [密钥登录及相关配置](/ssh/passkey/)
-- [Server | 服务端配置](/ssh/server/)
-- [上传文件至服务端](/ssh/trans_file/)
+- [Client](/ssh/client/)
+- [常见问题](/ssh/expansion/)
+- [密钥登录](/ssh/passkey/)
+- [Server](/ssh/server/)
+- [上传文件](/ssh/trans_file/)
 
 ## vim
 

@@ -1,22 +1,20 @@
-# 流媒体编解码、格式
+# 音频
 
-## 音频
+## 无损
 
-### 无损
-
-#### Free Lossless Audio Codec(FLAC)
+### Free Lossless Audio Codec(FLAC)
 
 最常用的无损格式，开源
 
 编码库BSD协议，接口GPL
 
-#### Apple Lossless Audio Codec(ALAC)
+### Apple Lossless Audio Codec(ALAC)
 
 苹果开发的无损格式，已于2011年10月26日以Apache License为协议开源
 
-### 有损
+## 有损
 
-#### Advanced Audio Coding(AAC)
+### Advanced Audio Coding(AAC)
 
 基于MPEG-2的标准，MP3的继任者，但存在版权问题（主要是使用aac的编码解码器，个人听音乐无所谓）
 
@@ -36,15 +34,15 @@ aac后缀指AAC 编码的音频 + ADTS（Audio Data Transport Stream）头部的
 8. MPEG-4 AAC LD 低延迟规格（Low Delay）
 9. MPEG-4 AAC HE 高效率规格（High Efficiency）
 
-#### MPEG Audio Layer III(MP3)
+### MPEG Audio Layer III(MP3)
 
 除兼容性之外没有优势
 
-#### Vorbis
+### Vorbis
 
 开源，常见于ogg格式中，spotify使用 vorbis
 
-#### Opus
+### Opus
 
 开源，常见与Ogg、WebM格式中，
 
@@ -52,9 +50,9 @@ aac后缀指AAC 编码的音频 + ADTS（Audio Data Transport Stream）头部的
 
 延迟低，压缩率高，低比特率的时候，音质远胜其它有损压缩格式，因此语音通话、视频会议等领域使用的比较多
 
-### 容器
+## 容器
 
-#### ogg
+### ogg
 
 Ogg可以以各种格式如Dirac，MNG，CELT，MPEG-4，MP3，Opus，Vorbis等包装音频和视频
 
@@ -62,42 +60,8 @@ Ogg可以以各种格式如Dirac，MNG，CELT，MPEG-4，MP3，Opus，Vorbis等�
 
 参考：https://zhuanlan.zhihu.com/p/66719842
 
-#### m4a
+### m4a
 
 MP4使用了MPEG-4进行封装的AAC编码， m4a是为了区别纯音频MP4文件和包含视频的MP4文件而由苹果公司使用的扩展名，M4A的本质和音频MP4相同，故MP4文件可直接更改扩展名为M4A
 
 m4a可以封装 各种规格的AAC、MP3、FLAC格式，最常用的是AAC，苹果生态下推荐此格式
-
-## 视频
-
-### 格式
-
-#### H.264(AVC)
-
-收费，但专利即将过期（2028），兼容性最好，不支持4K
-
-#### H.265(HEVC)
-
-压缩效率提升，收费，兼容性好
-
-#### H.266(VVC)
-
-性能更好，面向 8K、HDR、VR/360
-
-#### AV1
-
-开源免费，性能与HEVC差别不大，老设备支持差
-
-### 容器
-
-#### MP4(mp4,m4v,m4a(audio))
-
-最主流的通用
-
-#### MKV
-
-万能容器，几乎支持所有格式
-
-#### webm
-
-web(webp webm)家族，浏览器用，

@@ -1,4 +1,4 @@
-# Client | 客户端配置
+# Client
 
 Client 一般指自己的电脑
 

@@ -1,11 +1,11 @@
-# Rust 安装与环境变量配置
+# Rust
 
 ## 使用 Homebrew 安装
 
 ```sh
 brew install rustup
 rustup install stable # 安装基础工具链
-rustup component add rust-analyzer # rust lsp serve
+rustup component add rust-analyzer # lsp serve
 ```
 
 ### 配置环境变量

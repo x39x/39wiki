@@ -2,9 +2,12 @@
 
 ## JavaScript
 
+- https://wangdoc.com
+- https://www.zhihu.com/question/62791509
+
 ```javascript
 var a = 0;
-//  无效，var不支持局部作用域
+//  无效，var不支持局部作用域，支持函数作用域和全局作用域
 {
     var a = 1;
 }
@@ -42,5 +45,3 @@ https://blog.ymzhao.work/study/source-code/mitt
 - https://github.com/gnat/surreal
 - https://github.com/fabiospampinato/cash
 - https://github.com/jamiebuilds/the-super-tiny-compiler
-
-[ CommonJs和ES6 module ](https://www.zhihu.com/question/62791509)
