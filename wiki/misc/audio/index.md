@@ -26,11 +26,11 @@ aac后缀指AAC 编码的音频 + ADTS（Audio Data Transport Stream）头部的
 
 1. MPEG-2 AAC LC 低复杂度规格（Low Complexity）
 2. MPEG-2 AAC Main 主规格
-3. MPEG-2 AAC SSR 可变采样率规格（Scaleable Sample Rate）
+3. MPEG-2 AAC SSR 可变采样率规格（Scalable Sample Rate）
 4. MPEG-4 AAC LC 低复杂度规格（Low Complexity），MP4的音频部分就包括了该规格音频
 5. MPEG-4 AAC Main 主规格
-6. MPEG-4 AAC SSR 可变采样率规格（Scaleable Sample Rate）
-7. MPEG-4 AAC LTP 长时期预测规格（Long Term Predicition）
+6. MPEG-4 AAC SSR 可变采样率规格（Scalable Sample Rate）
+7. MPEG-4 AAC LTP 长时期预测规格（Long Term Predication）
 8. MPEG-4 AAC LD 低延迟规格（Low Delay）
 9. MPEG-4 AAC HE 高效率规格（High Efficiency）
 
@@ -65,3 +65,7 @@ Ogg可以以各种格式如Dirac，MNG，CELT，MPEG-4，MP3，Opus，Vorbis等�
 MP4使用了MPEG-4进行封装的AAC编码， m4a是为了区别纯音频MP4文件和包含视频的MP4文件而由苹果公司使用的扩展名，M4A的本质和音频MP4相同，故MP4文件可直接更改扩展名为M4A
 
 m4a可以封装 各种规格的AAC、MP3、FLAC格式，最常用的是AAC，苹果生态下推荐此格式
+
+## 其他
+
+https://github.com/QwenAudio/CosyVoice
