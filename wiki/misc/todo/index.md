@@ -2,6 +2,9 @@
 
 ## system
 
+- https://pages.cs.wisc.edu/~remzi/OSTEP/
+- https://pages.cs.wisc.edu/~remzi/OSTEP/Chinese/
+- https://farmerchillax.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
 - https://github.com/isno/theByteBook
 - https://nju-projectn.github.io/ics-pa-gitbook/ics2024/index.html
 

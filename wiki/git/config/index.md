@@ -42,19 +42,6 @@ diffFilter = delta --color-only
 side-by-side = true
 ```
 
-## difftastic
-
-优化 diff 的工具，建议关闭它默认的语法高亮，会分不清 diff 的代码
-
-```toml
-[diff]
-external = difft --syntax-highlight off
-
-# git log -p --ext-diff
-# git show --ext-diff
-
-```
-
 ## 网络
 
 将所有 https 都换为 ssh
@@ -105,3 +92,25 @@ cd .git/hooks
 # commit之后执行，条件与文件名相关
 touch post-commit
 ```
+
+## git tools
+
+### difftastic
+
+优化 diff 的工具，建议关闭它默认的语法高亮，会分不清 diff 的代码
+
+```toml
+[diff]
+external = difft --syntax-highlight off
+
+# git log -p --ext-diff
+# git show --ext-diff
+
+```
+
+### git graph
+
+- https://github.com/lusingander/serie
+- https://github.com/git-bahn/git-graph
+- https://github.com/isakbm/gitgraph.nvim
+- https://github.com/rbong/vim-flog

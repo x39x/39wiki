@@ -1,5 +1,11 @@
 # config
 
+## 插件
+
+- https://github.com/stevearc/aerial.nvim
+- https://github.com/MagicDuck/grug-far.nvim
+- https://github.com/mfussenegger/nvim-lint
+
 ## 加载顺序
 
 详细参考：
