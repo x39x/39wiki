@@ -21,3 +21,28 @@
 - https://github.com/yuesong-feng/30dayMakeCppServer/tree/main
 
 - https://zhuanlan.zhihu.com/p/688090551
+
+### ascii art
+
+- https://github.com/Asthestarsfalll/img2art
+- https://lachlanarthur.github.io/Braille-ASCII-Art/
+- https://github.com/koraykzly/braille-ascii-art
+- https://emojicombos.com/hatsune-miku-ascii-art
+
+### blog
+
+- https://innei.in
+- https://carloscuesta.me
+- https://itsbruno.dev
+- https://jw1.dev/
+- https://mnmlist.com/
+- https://atpx.com/
+- https://61.life/
+- https://shud.in
+- https://kami.im
+- https://emilkowal.ski/
+
+### design
+
+- https://wodniack.dev/
+- http://www.yini.org
