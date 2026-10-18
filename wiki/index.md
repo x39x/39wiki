@@ -91,18 +91,17 @@ layout: doc
 - [fish](/shell/fish/)
 - [快捷键](/shell/shourtcut/)
 - [stdin / stdout / stderr](/shell/std/)
-- **cmd line tools**
-    - [记录](/shell/cmd-line-tools/note/)
-    - [文件查看](/shell/cmd-line-tools/pager/)
-    - [tar](/shell/cmd-line-tools/tar/)
-    - [Tmux](/shell/cmd-line-tools/tmux/)
-    - [zip](/shell/cmd-line-tools/zip/)
 - **grammar**
     - [bash 扩展](/shell/grammar/bash/)
-    - [笔记](/shell/grammar/notes/)
-    - [常见用法](/shell/grammar/recipes/)
+    - [笔记](/shell/grammar/recipes/)
     - [语法](/shell/grammar/sh/)
     - [基本工具](/shell/grammar/toolbox/)
+- **tools**
+    - [记录](/shell/tools/note/)
+    - [文件查看](/shell/tools/pager/)
+    - [tar](/shell/tools/tar/)
+    - [Tmux](/shell/tools/tmux/)
+    - [zip](/shell/tools/zip/)
 
 ## ssh
 

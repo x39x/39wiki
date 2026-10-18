@@ -5,6 +5,7 @@
 - https://github.com/stevearc/aerial.nvim
 - https://github.com/MagicDuck/grug-far.nvim
 - https://github.com/mfussenegger/nvim-lint
+- https://github.com/windwp/nvim-ts-autotag
 
 ## 加载顺序
 

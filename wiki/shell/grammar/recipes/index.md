@@ -1,4 +1,4 @@
-# 常见用法
+# 笔记
 
 ## replace character
 
@@ -91,3 +91,38 @@ echo "hello" | tee >(grep h) >(wc -c)
 # 重定向 stdout 到命令
 ls > >(grep py)
 ```
+
+## `[` 是`test`的别名
+
+`[`并不是 sh 语法，而是一条命令
+
+```sh
+which [
+/bin/[
+```
+
+判断一个条件如:
+
+```bash
+# -a:and, -o:or
+[ "$(uname)" = "Darwin" -a -f "/opt/homebrew/bin/brew" ]
+```
+
+不能执行命令为条件
+
+```bash
+# 命令执行失败/成功不能当作条件
+[ command -v nvim >/dev/null 2>&1 ]
+```
+
+## -
+
+`-` 将stdin当作一个文件
+
+```bash
+tar -f - </dev/null
+```
+
+## bash zsh
+
+zsh把“命令行输入框”当成一个可编程对象（ZLE） bash 只是 readline 的一层绑定
