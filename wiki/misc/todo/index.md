@@ -19,6 +19,7 @@
 - https://github.com/imageworks/pystring
 - https://github.com/ossrs/srs
 - https://github.com/yuesong-feng/30dayMakeCppServer/tree/main
+- https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/
 
 - https://zhuanlan.zhihu.com/p/688090551
 
