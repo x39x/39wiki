@@ -1,7 +1,8 @@
 # Makefile
 
-- [how to write makefile](https://seisman.github.io/how-to-write-makefile/)
-- [makefile tutorial](https://gavinliu6.github.io/Makefile-Tutorial-zh-CN/#/)
+- https://seisman.github.io/how-to-write-makefile/
+- https://gavinliu6.github.io/Makefile-Tutorial-zh-CN/
+- https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/
 
 > Makefile可以使用 bear 工具生成`compile_commands.json`文件
 
