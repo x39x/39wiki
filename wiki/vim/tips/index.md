@@ -21,7 +21,9 @@
 
 ## TODO
 
-[editorconfig](https://editorconfig.org/)
+- [editorconfig](https://editorconfig.org/)
+
+- `:h channel`
 
 可以被多个编辑器读取
 
