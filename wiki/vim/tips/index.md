@@ -24,6 +24,7 @@
 - [editorconfig](https://editorconfig.org/)
 
 - `:h channel`
+- `vim.async`
 
 可以被多个编辑器读取
 
